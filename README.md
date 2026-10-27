@@ -1,2 +1,12 @@
-# DAFS_website
-This is the content for the DAFS webpage
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My website</title>
+</head>
+<body>
+  <h1>Welcome to the DAFS Website!</h1>
+  <p>Testing for now</p>
+</body>
+</html>
