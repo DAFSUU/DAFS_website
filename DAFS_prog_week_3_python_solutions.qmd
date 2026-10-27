@@ -1,0 +1,207 @@
+---
+title: "Solutions Python week 3"
+sidebar: dafs-esm
+---
+
+# 3.1
+
+```{r, eval = F}
+# Part 1: For loop – print numbers divisible by 3 or 5
+
+numbers_divisible = []  # we will store the numbers divisible by 3 or 5 here
+
+for n in range(1, 51):  # numbers from 1 to 50
+    if (n % 3 == 0) or (n % 5 == 0):
+        print(n)
+        numbers_divisible.append(n)  # remember this number for later
+
+# Part 2: While loop – cumulative sum of these numbers until it exceeds 200
+
+cumulative_sum = 0
+i = 0  # index for the list
+
+while i < len(numbers_divisible) and cumulative_sum <= 200:
+    cumulative_sum = cumulative_sum + numbers_divisible[i]
+    i = i + 1  # move to the next number
+
+```
+
+# 3.2
+
+```{r, eval = F}
+import pandas as pd
+
+# using the following dataframe
+data = {
+    "Region": ["A", "B", "A", "C", "B", "C", "A"],
+    "EnergyUsage": [10, 20, 30, 40, 50, 60, 70],
+    "Sustainable": [True, False, True, False, True, False, True]
+}
+
+df = pd.DataFrame(data)
+print("Full DataFrame:")
+print(df)
+
+# --- Part 1: For loop – print rows with Sustainable == True and EnergyUsage > 20 
+
+print("Rows where Sustainable is True and EnergyUsage > 20:")
+
+# We loop over the row indices: 0, 1, 2, ...
+for i in range(len(df)):
+    row = df.iloc[i]  # get the i-th row
+    if (row["Sustainable"] == True) and (row["EnergyUsage"] > 20):
+        print(row)
+
+
+# --- Part 2: While loop – cumulative EnergyUsage for Sustainable rows
+
+cumulative_energy = 0
+i = 0
+contributing_indices = []  # we will store the row indices that contribute
+
+# We continue while i is inside the dataframe AND cumulative_energy <= 50
+while i < len(df) and cumulative_energy <= 50:
+    row = df.iloc[i]
+    if row["Sustainable"] == True:
+        cumulative_energy = cumulative_energy + row["EnergyUsage"]
+        contributing_indices.append(i)
+    i = i + 1
+
+print("Cumulative EnergyUsage from sustainable rows (stopped when > 50):")
+print(cumulative_energy)
+
+print("Rows that contributed to this cumulative EnergyUsage:")
+print(df.iloc[contributing_indices])
+```
+
+# 3.3: Guess the secret number
+
+```{r, eval = F}
+import random
+
+# Randomly select a secret number between 1 and 20
+secret_number = random.randint(1, 20)
+
+attempts = 0          # how many guesses the user has made
+max_attempts = 5      # maximum number of allowed guesses
+
+print("I have chosen a number between 1 and 20. Can you guess it?")
+
+# Use a while loop to allow the user to guess
+while attempts < max_attempts:
+    guess = int(input("Enter your guess: "))
+    attempts = attempts + 1
+
+    if guess > secret_number:
+        print("Too high!")
+    elif guess < secret_number:
+        print("Too low!")
+    else:
+        print("Correct!")
+        print("You guessed it in", attempts, "attempt(s).")
+        break  # stop the loop if the guess is correct
+
+# This runs if the loop ends without a correct guess
+if attempts == max_attempts and guess != secret_number:
+    print("Game Over!")
+    print("The secret number was:", secret_number)
+```
+
+# 3.4 Working with real data
+
+```{r, eval = F}
+# This was not part of the exercise, but to ensure you can run the script we create some data here to ensure it will always work.
+data = {
+    "Country": ["Netherlands", "Belgium", "France", "Germany", "Spain", "USA", "China", "Sweden"],
+    "Continent": ["Europe", "Europe", "Europe", "Europe", "Europe", "North America", "Asia", "Europe"],
+    "renewable_energy": [50, 30, 40, np.nan, 25, 80, 100, 60],   # some values, one missing (Germany)
+    "total_energy":     [120, 100, 150, 200, np.nan, 300, 500, 90]  # some values, one missing (Spain)
+}
+
+# transform into a pandas dataframe for the functions to work
+df = pd.DataFrame(data)
+
+
+# ---------------------------------------------------------
+# 2. Inspect the data
+# ---------------------------------------------------------
+
+print("First 10 rows of the dataset:")
+print(df.head(10))
+
+print("Column types:")
+print(df.dtypes)
+
+print("Summary statistics (describe):")
+print(df.describe())
+
+# ---------------------------------------------------------
+# 3. Subset the data to European countries
+# ---------------------------------------------------------
+
+EU_data = df[df["Continent"] == "Europe"].copy()
+print("Data for European countries (EU_data):")
+print(EU_data)
+
+# ---------------------------------------------------------
+# 4. Compute renewable energy percentage
+#     renewable_percentage = (renewable_energy / total_energy) * 100
+# ---------------------------------------------------------
+
+EU_data["renewable_percentage"] = (EU_data["renewable_energy"] / EU_data["total_energy"]) * 100
+print("EU_data with renewable_percentage:")
+print(EU_data)
+
+# ---------------------------------------------------------
+# 5. Classify countries by renewable_percentage
+#    > 50%  -> "High Renewable"
+#    20–50% -> "Medium Renewable"
+#    else   -> "Low Renewable"
+# ---------------------------------------------------------
+
+def classify_renewable(pct):
+    if pct > 50:
+        return "High Renewable"
+    elif pct >= 20 and pct <= 50:
+        return "Medium Renewable"
+    else:
+        return "Low Renewable"
+
+EU_data["renewable_category"] = EU_data["renewable_percentage"].apply(classify_renewable)
+print("EU_data with renewable_category:")
+print(EU_data)
+
+# ---------------------------------------------------------
+# 6. Using if/else to check for missing values
+#    in renewable_energy or total_energy
+# ---------------------------------------------------------
+
+missing_mask = EU_data["renewable_energy"].isna() | EU_data["total_energy"].isna()
+n_missing = missing_mask.sum()
+
+if n_missing > 0:
+    print("There are", n_missing, "rows with missing values in renewable_energy or total_energy.")
+else:
+    print("There are no missing values in renewable_energy or total_energy.")
+
+# Optional: show the incomplete rows
+if n_missing > 0:
+    print("Rows with missing values:")
+    print(EU_data[missing_mask])
+
+# ---------------------------------------------------------
+# 7. Group and summarize data
+#    Group by renewable_category and compute the average
+#    renewable_percentage for each category
+# ---------------------------------------------------------
+
+summary = (
+    EU_data
+    .groupby("renewable_category")["renewable_percentage"]
+    .mean()
+    .reset_index()
+)
+
+print("Average renewable_percentage by renewable_category:")
+print(summary)
+```

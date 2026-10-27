@@ -1,0 +1,59 @@
+project:
+  type: website
+
+author: "Janpieter van der Pol"
+
+format:
+  html:
+    theme: [cosmo, custom.scss]
+    css: styles2.css
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+
+editor: visual
+
+website:
+  title: "DAFS Programming"
+  navbar:
+    logo: ./imgs/logo5.png
+    left:
+      - text: "Home"
+        href: index.qmd
+      - text: "Data Science Track (R)"
+        href: DAFS_prog_week_1_R.qmd
+      - text: "ESM Track (Python)"
+        href: DAFS_prog_week_1_python.qmd
+
+  sidebar:
+    - id: dafs-dst
+      title: "DAFS - Data Science Track"
+      contents:
+        - section: "Week 1"
+          contents:
+            - DAFS_prog_week_1_R.qmd
+            - DAFS_prog_week_1_R_solutions.qmd
+        - section: "Week 2"
+          contents:
+            - DAFS_prog_week_2_R.qmd
+            - DAFS_prog_week_2_R_solutions.qmd
+        - section: "Week 3"
+          contents:
+            - DAFS_prog_week_3_R.qmd
+            - DAFS_prog_week_3_R_solutions.qmd
+
+    - id: dafs-esm
+      title: "DAFS - ESM Track"
+      contents:
+        - section: "Week 1"
+          contents:
+            - DAFS_prog_week_1_python.qmd
+            - DAFS_prog_week_1_python_solutions.qmd
+        - section: "Week 2"
+          contents:
+            - DAFS_prog_week_2_Python.qmd
+            - DAFS_prog_week_2_python_solutions.qmd
+        - section: "Week 3"
+          contents:
+            - DAFS_prog_week_3_Python.qmd
+            - DAFS_prog_week_3_python_solutions.qmd

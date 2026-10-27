@@ -1,0 +1,246 @@
+---
+title: "Week 3: Loops and exercises"
+sidebar: dafs-esm
+---
+
+# 0. Overview
+
+|            | Python                  | Example Python    |
+|------------|-------------------------|-------------------|
+| for loop   | <input type="checkbox"> | for i in range(): |
+| While loop | <input type="checkbox"> | while i\<5:       |
+
+# 1. Looping functions
+
+Loops are a fundamental part of programming in data science because they allow you to efficiently perform repetitive tasks on large datasets. Instead of writing repetitive code manually, loops enable automation by iterating over data structures like lists, dataframes, or arrays. This is particularly important when processing datasets with thousands or millions of entries, as it saves time and reduces the risk of errors. Loops also allow for dynamic analysis, enabling you to apply functions, calculations, or transformations to each element in a dataset, making them a powerful tool for scalability and flexibility in data analysis.
+
+Imagine you are analyzing the carbon footprint of 1,000 households to assess their environmental impact. Each household has data on electricity consumption, gas usage, and travel habits. Your task is to calculate the total carbon emissions for each household using a simple formula:
+
+$$
+CarbonEmissions=(Electricity(kWh) × 0.5) + (Gas(m³) × 2.1) + (Travel(km)×0.2)
+$$
+
+Without loops, you would need to manually calculate this formula for each household, which is tedious and impractical. Instead, with a loop, you can automate the process.
+
+Imagine that we have measurements of forestation over time:
+
+| Year | Forest Area (ha) |
+|------|------------------|
+| 2000 | 1,000,000        |
+| 2001 | 990,000          |
+| 2002 | 975,000          |
+| 2003 | 950,000          |
+| 2004 | 930,000          |
+| 2005 | 920,000          |
+| 2005 | 900,000          |
+
+If we want to compute the change in ha over time we would have to compute each year of change individually. Using a loop we automate this process by sequentially moving over the dataframe and computing the change rate. Let's see this can be done in Python and R.
+
+There are two main techniques for looping: a **while** loop and a **for** loop. The **while** loop needs a condition, while this condition is Ttrue, the loop will continue to run. The **for** loop is used when you want to repeat a task a specific number of times or iterate over a sequence (like a list, range, or string). It works by stepping through each element in the sequence until it reaches the end. Let's have a look in detail:
+
+## 1.1 For loops
+
+![](Pythonlogo.png)
+
+A loop in Python starts with the **for** operator. This is followed by a condition that determines how long the loop runs ("the loop runs for..."). We start by defining a variable that will take the different values in the loop. Suppose we want to print the value 0 to 4. This requires a loop that takes a variables that starts at 0, and increases by one with each iteration. The **in** operator is used to define the values the variables will take. The end of the condition is identified with an **:** at the end of the line. A basic loop in python takes the following structure:
+
+```{R, eval = FALSE}
+for i in range(5):
+    print("Iteration", i)
+```
+
+The main difference with R resides in the indentation of the code. You have to make sure that everything that you want to be part of the loop is indented at the same level.
+
+```{R, eval = FALSE}
+for i in range(5):
+    print("Indented", i)
+print("Not Indented", i)
+```
+
+In this script the **for** loop will run from 0 to 4, and runs print("Indented", i) 5 times. The final line print("Not Indented", i) is not considered as part of the loop and will therefor by executed once the loop is done. At the point i = 4, and the code will print "Not Indented 4".
+
+For the other variations the logic is the same as with R, we can use text and numbers, vectors of elements and ranges to loop over.
+
+```{R, eval = F}
+# items in a list
+fruits = ["apple", "banana", "cherry", "date"]
+
+for fruit in fruits:
+    print("I like", fruit)
+
+
+# with an index
+languages = ["Python", "Java", "C++", "Ruby"]
+
+for i, language in enumerate(languages):
+    print("Language", i + 1, "is", language)
+
+# with a custom step
+
+for number in range(1, 11, 2):
+    print("Odd number:", number)
+
+# Nested loops
+
+for i in range(3):
+    for j in range(2):
+        print("i =", i, ", j =", j)
+
+# a break statement
+numbers = [3, 7, 1, 9, 4, 2]
+
+
+for num in numbers:
+    if num == 9:
+        print("Found 9. Exiting the loop.")
+        break
+    print("Processing", num)
+     
+```
+
+# 2. While loops
+
+**While** loops continue to loop as long as a specific condition is satisfied. They therefore differ from the **for** loops which have a specified stopping point. The danger with these loops is that they can theoretically run forever if the conditions is always verified. The basic logic of these loops is: **while** followed by a condition and then the code to execute while this condition is verified:
+
+![](Pythonlogo.png)
+
+```{R, eval = F}
+# Example 1: Simple while loop
+count = 1
+while count <= 5:
+    print("Iteration", count)
+    count += 1
+
+# Example 3: Loop with a condition and continue statement
+i = 0
+while i < 10:
+    i += 1
+    if i % 2 == 0:
+        continue  # Skip even numbers
+    print(i)
+
+# Example 4: Nested while loops
+row = 1
+while row <= 3:
+    col = 1
+    while col <= 3:
+        print("Row", row, "Column", col)
+        col += 1
+    row += 1
+     
+```
+
+# 3. Exercises
+
+## 3.1 Multiples of 3 and 5
+
+Use a for loop to iterate over a range of numbers and a while loop to calculate cumulative sums.
+
+-   Write a program that:
+    -   Iterates through the numbers from 1 to 50 using a for loop.
+    -   For each number, checks if it is divisible by 3 or 5 using an if statement.
+    -   Prints the number if the condition is true.
+-   Extend the program:
+    -   Use a while loop to calculate the cumulative sum of all the numbers divisible by 3 or 5.
+    -   Stop the loop once the sum exceeds 200 and print the final cumulative sum.
+
+## 3.2 Filtering Rows from a Dataframe
+
+```{R, eval = F}
+# Use the following dataframe:
+data = {
+    "Region": ["A", "B", "A", "C", "B", "C", "A"],
+    "EnergyUsage": [10, 20, 30, 40, 50, 60, 70],
+    "Sustainable": [True, False, True, False, True, False, True]
+}
+
+df = pd.DataFrame(data)
+```
+
+-   Write a program that:
+    -   Iterates through each row of the dataframe using a for loop.
+    -   Checks if the Sustainable column is True and EnergyUsage is greater than 20.
+    -   Prints the rows meeting these criteria.
+-   Extend the program:
+    -   Use a while loop to iterate through the dataframe rows, adding the EnergyUsage of rows that are sustainable to a cumulative total.
+    -   Stop the loop once the cumulative EnergyUsage exceeds 50, and print the total and the rows contributing to it.
+
+## 3.3 Guess the Secret Number
+
+-   Write a program that:
+    -   Randomly selects a secret number between 1 and 20 using import random.
+    -   Uses a while loop to allow the user to guess the number.
+    -   If the guess is too high, print "Too high!".
+    -   If the guess is too low, print "Too low!".
+    -   Break the loop and print "Correct!" when the user guesses the number.
+-   Extend the program:
+    -   Limit the user to 5 attempts using an additional counter.
+    -   If the user fails within 5 attempts, print "Game Over!" and reveal the secret number.
+
+## 3.4 working with real data
+
+On Brightspace you will find a dataset with energy production per county. Your task is to analyze this data to gain insights into the energy trends of these regions.
+
+-   Load and Inspect the Data
+    -   Import the dataset into your programming environment.
+    -   Display the first 10 rows of the dataset to understand its structure.
+    -   Identify the columns and their data types.
+    -   You can use the print(mydata.describe()) function.
+-   Subset the Data
+    -   Filter the dataset to include only rows corresponding to European countries.
+    -   Save this subset into a new variable (e.g., EU_data).
+-   Compute Renewable Energy Percentage
+    -   Create a new column called renewable_percentage that calculates the percentage of renewable + energy in the total energy production.
+-   Classify Countries
+    -   Create a new column called renewable_category:
+    -   If renewable_percentage is greater than 50%, classify as "High Renewable".If between 20% and 50%, classify as "Medium Renewable". Otherwise, classify as "Low Renewable".
+-   Using If/else
+    -   Write a script to check if there are any countries with missing values in the renewable_energy or total_energy columns. If missing values exist, print a message indicating how many rows are incomplete.
+-   Group and Summarize Data
+    -   Group the data by renewable_category and compute the average renewable_percentage for each category.
+-   Display the results in a tabular format.
+
+# 4. Exam-type questions
+
+In the exam there will be different types of questions.
+
+-   The first part will consist of several **multiple choice** questions. You will be provided with a code snippet in either python or R (some questions will have R, some python) you will have to answer the question based on this code.
+-   The second type of question consists in **reading and explaining** a bigger script. With this type of question you are requested to explain each line of code nd deduce the output of the script.
+-   The third type consists in **finding an error**. We will provide you with a script, you will be requested to identify the error and explain how to adjust the code.
+-   The final question type consists in **writing** a short script. You will be provided with a task, you are requested to write a script that performs the task. You may pick the language.
+
+## 4.1 Reading code in Python 1
+
+```{R, eval=F}
+total_attempts = 0
+target_reached = False
+
+while not target_reached:
+    die1 = random.randint(1, 6)
+    die2 = random.randint(1, 6)
+    sum_dice = die1 + die2
+    total_attempts = total_attempts + 1 
+    if sum_dice == 7:
+        target_reached = True
+        print(f"Sum of 7 reached after {total_attempts} attempts.")
+    else:
+        print(f"Attempt {total_attempts}: Sum = {sum_dice}")
+```
+
+## 4.2 Reading code in Python
+
+```{R, eval = F}
+for student in students:
+    avg_score = (student['Math'] + student['Science'] + student['English']) / 3
+    if avg_score >= 60:
+        student['Passed'] = True
+    else:
+        student['Passed'] = False
+for student in students:
+    print(student)
+```
+
+## 4.5 Exercise 5: write code
+
+You are in charge of a log-in system on a website in which a user has to provide the correct password. When a correct password is provides print "success!". If the user has failed 3 times stop the system. Write a function that can perform this task.
+

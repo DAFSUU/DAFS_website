@@ -1,0 +1,9 @@
+---
+title: "DAFS Programming Basics"
+---
+
+Programming materials for weeks 1–3.
+
+- **Data Science Track (R):** [Week 1](DAFS_prog_week_1_R.qmd) · [Week 2](DAFS_prog_week_2_R.qmd) · [Week 3](DAFS_prog_week_3_R.qmd)
+- **ESM Track (Python):** [Week 1](DAFS_prog_week_1_python.qmd) · [Week 2](DAFS_prog_week_2_Python.qmd) · [Week 3](DAFS_prog_week_3_Python.qmd)
+- **Combined R & Python:** [Week 1](DAFS_prog_week_1.qmd) · [Week 2](DAFS_prog_week_2.qmd) · [Week 3](DAFS_prog_week_3.qmd)

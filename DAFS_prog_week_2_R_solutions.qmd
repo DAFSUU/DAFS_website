@@ -1,0 +1,293 @@
+---
+title: "Solutions R week 2"
+sidebar: dafs-dst
+---
+
+# Exercises part 1
+
+## 1. Carbon Emission Category Checker
+
+```{r, eval=F, include=T}
+# Carbon emissions in tons per year
+emissions <- 7   # students can change this value
+
+if (emissions < 2) {
+  print("Low Emissions.")
+} else if (emissions >= 2 & emissions < 6) {
+  print("Moderate Emissions.")
+} else if (emissions >= 6 & emissions <= 15) {
+  print("High Emissions.")
+} else {
+  print("Very High Emissions.")
+}
+```
+
+## 2. Water Conservation Awareness
+
+```{r, eval=F, include=T}
+# Water usage in liters per day
+water_usage <- 120   # students can change this value
+
+if (water_usage < 50) {
+  print("Excellent Conservation.")
+} else if (water_usage >= 50 & water_usage < 100) {
+  print("Good Conservation.")
+} else if (water_usage >= 100 & water_usage <= 150) {
+  print("Average Conservation.")
+} else {
+  print("Poor Conservation.")
+}
+```
+
+# Exercises part 2
+
+No solutions here, just use dim(name_of_your_df) to check that everything is ok \# Exercises part 3
+
+## 1. Create a 10 by 10 matrix filled with 1s
+
+```{r, eval=F, include=T}
+mat_10x10 <- matrix(1, nrow = 10, ncol = 10)
+mat_10x10
+```
+
+## 2. Multiply each element of this matrix by 5
+
+```{r, eval=F, include=T}
+mat_10x10_times_5 <- mat_10x10 * 5
+mat_10x10_times_5
+```
+
+## 3. Compute the sum of all elements in this matrix
+
+```{r, eval=F, include=T}
+sum_mat_10x10_times_5 <- sum(mat_10x10_times_5)
+sum_mat_10x10_times_5
+```
+
+## 4. Create a 3 by 3 matrix filled with random values (runif)
+
+```{r, eval=F, include=T}
+mat_random_3x3 <- matrix(runif(9), nrow = 3, ncol = 3)
+mat_random_3x3
+```
+
+## 5. Create a dataframe with 3 columns: ID, Country, Value
+
+```{r, eval=F, include=T}
+ID      <- c(1, 2, 3)
+Country <- c("NL", "BE", "FR")
+Value   <- c(1340.90, 142.23, 821.42)
+
+my_df <- data.frame(
+  ID = ID,
+  Country = Country,
+  Value = Value
+)
+
+my_df
+```
+
+## 6. Multiply the first column of the matrix (from question 4) with the Value column of the dataframe
+
+```{r, eval=F, include=T}
+result_multiplication <- mat_random_3x3[, 1] * my_df$Value
+result_multiplication
+```
+
+# Exercises part 4
+
+In reality you would do: lens_data \<- read.csv("lens_export.csv")
+
+For the solutions, we create a small toy dataframe: lens_data \<- data.frame( lens_id = c("L1", "L2", "L3", "L4", "L5", "L6"), Year = c(2018, 2019, 2019, 2020, 2020, 2020), Citations = c(5, 0, 12, 3, 25, 7), `Publication Type` = c("Journal Article", "Conference Proceeding", "Journal Article", "Book Chapter", "Journal Article", "Conference Proceeding"), Open.Access = c(TRUE, FALSE, TRUE, FALSE, TRUE, TRUE) )
+
+## 2.How many columns are there? Was it imported correctly?
+
+```{r, eval=F, include=T}
+# Number of columns
+ncol(lens_data)
+
+# Names of the columns
+colnames(lens_data)
+
+# You can also look at the first rows to see if it looks OK:
+head(lens_data)
+```
+
+## 3. What's the averaghe number of citations?
+
+```{r, eval=F, include=T}
+mean_citations <- mean(lens_data$Citations)
+mean_citations
+```
+
+## 4. Pick a year: how many publications
+
+```{r, eval=F, include=T}
+year_of_interest <- 2020
+
+pubs_in_year <- sum(lens_data$Year == year_of_interest)
+pubs_in_year
+```
+
+## 5. How many publications are there of each type?
+
+```{r, eval=F, include=T}
+
+table(lens_data$`Publication Type`)
+```
+
+## 6. How many publications were in open access each year?
+
+```{r, eval=F, include=T}
+table(lens_data$Year[lens_data$Open.Access == TRUE])
+```
+
+# Exercices part 7 (explain the code)
+
+```{r, eval = F, include = T}
+sustainability_data <- read.csv("sustainability_data.csv")
+
+
+sustainability_data$Emissions_Category <- ifelse(
+  sustainability_data$CO2_Emissions < 5, "Low",
+  ifelse(sustainability_data$CO2_Emissions <= 10, "Moderate", "High")
+)
+
+sustainability_data$Renewable_Contribution <- sustainability_data$CO2_Emissions / sustainability_data$Renewable_Energy_Percent
+
+emissions_matrix <- matrix(sample(1:100, 9, replace = TRUE), nrow = 3, ncol = 3)
+
+adjusted_emissions_matrix <- emissions_matrix * 0.05
+
+total_offset <- sum(adjusted_emissions_matrix)
+print(paste("Total Offset Contribution:", total_offset))
+
+high_emissions_high_renewable <- subset(sustainability_data, 
+                                        Emissions_Category == "High" & Renewable_Energy_Percent > 40)
+print("Countries with high CO₂ emissions and >40% renewable energy:")
+print(high_emissions_high_renewable)
+
+write.csv(sustainability_data, "sustainability_data_updated.csv", row.names = FALSE)
+
+average_renewable <- mean(sustainability_data$Renewable_Energy_Percent)
+print(paste("Average Renewable Energy Usage:", average_renewable, "%"))
+
+sustainability_data$Sustainability_Strategy <- ifelse(
+  sustainability_data$Renewable_Energy_Percent > average_renewable, "Proactive", "Reactive"
+)
+
+print(sustainability_data)
+```
+
+L1: A csv file is loaded and stored into an object called sustainability_data L2-L5: Creates a new column called Emissions_Category which takes the value "low" if the emissions are lower than 5, "Moderate" if the emissions are are higher than 5 and lower than 10, "high" if they exceed 10.
+
+L6: Creates a new column which is the result of the division of the CO2_Emissions column and the Renewable_energy_percent column
+
+L7: Creates a matrix with 9 random numbers, 3 rows, 3 columns
+
+L8: Creates a new matrix that is the result of the multiplication of each value by 0.05
+
+L9: Creates a variable that contains the sum of all emissions from the matrix
+
+L10: Prints out the total offset
+
+L11: Creates a subset with only the rows where the category is high and the percentage is \> 40 L12: Prints a sentence L13: Prints the data frame
+
+L14: Writes the data to a csv file
+
+L15: Compute the average of the renewable energy percents column
+
+L16: Prints the results
+
+L17: Creates a new column with either the tag "Proactive" or "Reactive" if the Value in the Renewable_Energy_Percent column is higher than the average_renewable
+
+```{r, eval = F, include=FALSE}
+library(dplyr)
+library(readr)
+
+solar_data <- read_csv("data/solar_production.csv")
+
+solar_data <- select(solar_data, country, date, production_mwh)
+
+solar_data <- mutate(solar_data, year = format(as.Date(date), "%Y"))
+
+country_year <- group_by(solar_data, country, year)
+
+country_year <- summarise(country_year, avg_production = mean(production_mwh, na.rm = TRUE))
+
+recent_data <- filter(country_year, year >= 2018)
+
+write.csv2(recent_data, "data/avg_solar_production_recent.csv")
+
+print("Average solar production per country since 2018 has been saved.")
+```
+
+L1: Reads a CSV file into R as a tibble and assigns it to the variable solar_data.
+
+L2: Subsets the dataframe by keeping only the specified columns (country, date, production_mwh).
+
+L3: Creates a new column called year by converting the date column to a Date object and extracting the year as text.
+
+L4: Groups the dataframe by country and year so that subsequent operations (e.g., summarise) are performed within each group.
+
+L5: Aggregates each group to a single row by computing the mean of production_mwh while ignoring missing values; stores the result in avg_production.
+
+L6: Filters the grouped summary to keep only rows where the year is 2018 or later.
+
+L7: Exports the dataframe recent_data to a CSV file using semicolon separators (CSV2 format).
+
+L8: Prints a text message to the console.
+
+```{r, eval = F, include = T}
+library(dplyr)
+library(readr)
+
+wind <- read_csv("data/wind_generation.csv")
+capacity <- read_csv("data/installed_capacity.csv")
+
+wind <- select(wind, region, date, generation_mwh)
+capacity <- select(capacity, region, capacity_mw)
+
+wind <- mutate(wind, year = format(as.Date(date), "%Y"))
+
+wind_year <- group_by(wind, region, year)
+wind_year <- summarise(wind_year, total_generation = sum(generation_mwh, na.rm = TRUE))
+
+merged <- left_join(wind_year, capacity, by = "region")
+
+merged <- mutate(merged, utilization_rate = total_generation / (capacity_mw * 8760))
+
+merged <- arrange(merged, desc(utilization_rate))
+
+write.csv2(merged, "data/wind_utilization.csv")
+
+print(head(merged, 5))
+```
+
+L1: library(dplyr) Loads the dplyr package so its data manipulation functions become available.
+
+L2: library(readr) Loads the readr package to enable fast reading of CSV files.
+
+L3: wind \<- read_csv("data/wind_generation.csv") Reads a CSV file into a tibble and assigns it to the variable wind.
+
+L4: capacity \<- read_csv("data/installed_capacity.csv") Reads another CSV file into a tibble, stored in the variable capacity.
+
+L5: wind \<- select(wind, region, date, generation_mwh) Subsets the wind dataframe to retain only the columns region, date, and generation_mwh.
+
+L6: capacity \<- select(capacity, region, capacity_mw) Subsets the capacity dataframe to keep only region and capacity_mw.
+
+L7: wind \<- mutate(wind, year = format(as.Date(date), "%Y")) Creates a new column year by converting date into a Date object and extracting the year as text.
+
+L8: wind_year \<- group_by(wind, region, year) Groups the wind dataframe by region and year so later operations act within each group.
+
+L9: wind_year \<- summarise(wind_year, total_generation = sum(generation_mwh, na.rm = TRUE)) Aggregates each group to a single row by computing the total (sum) of generation_mwh, ignoring missing values.
+
+L10: merged \<- left_join(wind_year, capacity, by = "region") Performs a left join, matching each row in wind_year with the corresponding row in capacity based on region; keeps all rows from wind_year.
+
+L11: merged \<- mutate(merged, utilization_rate = total_generation / (capacity_mw \* 8760)) Adds a new column utilization_rate, computed as total yearly generation divided by installed capacity times 8760 (hours per year).
+
+L12: merged \<- arrange(merged, desc(utilization_rate)) Sorts the dataframe in descending order of utilization_rate.
+
+L13: write.csv2(merged, "data/wind_utilization.csv") Exports the final dataframe to a CSV file using semicolon separators (CSV2 format).
+
+L14: print(head(merged, 5)) Prints the first five rows of the dataframe to the console.

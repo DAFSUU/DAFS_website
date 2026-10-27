@@ -1,0 +1,129 @@
+---
+title: "Solutions Python week 2"
+sidebar: dafs-esm
+---
+
+# Exercises part 1
+
+```{r, eval = F}
+if emissions < 2:
+    print("Low Emissions.")
+elif emissions >= 2 and emissions < 6:
+    print("Moderate Emissions.")
+elif emissions >= 6 and emissions < 15:
+    print("High Emissions.")
+else:
+    print("Very High Emissions.")
+```
+
+# Ecercises part 2
+
+```{r, eval = F}
+import numpy as np
+import pandas as pd
+
+# 1. Create a 10 by 10 matrix filled with 1s
+matrix_10x10 = np.ones((10, 10))
+print("10x10 matrix filled with 1s:")
+print(matrix_10x10)
+
+# 2. Multiply each element of this matrix by 5
+matrix_10x10_times_5 = matrix_10x10 * 5
+print("10x10 matrix multiplied by 5:")
+print(matrix_10x10_times_5)
+
+# 3. Compute the sum of all elements in this matrix
+sum_elements = np.sum(matrix_10x10_times_5)
+print("Sum of all elements in the 10x10 matrix multiplied by 5:")
+print(sum_elements)
+
+# 4. Create a 3 by 3 matrix filled with random values (like runif() in R)
+matrix_3x3_random = np.random.rand(3, 3)
+print("3x3 matrix filled with random values:")
+print(matrix_3x3_random)
+
+# 5. Create a dataframe with 3 columns: ID, Country, Value
+data = {
+    "ID": [1, 2, 3],
+    "Country": ["NL", "BE", "FR"],
+    "Value": [1340.90, 142.23, 821.42]
+}
+
+df = pd.DataFrame(data)
+print("DataFrame with ID, Country, Value:")
+print(df)
+
+# 6. Multiply the first column of the 3x3 matrix with the Value column of the dataframe
+first_column_matrix = matrix_3x3_random[:, 0]  # first column of the random matrix
+result_multiplication = first_column_matrix * df["Value"]
+
+print("First column of 3x3 matrix:")
+print(first_column_matrix)
+
+print("Result of multiplying first column of matrix with Value column of DataFrame:")
+print(result_multiplication)
+```
+
+# Exercise part 4 & 5
+
+```{r, eval = F}
+import pandas as pd
+
+# 4.1
+# We can join the datasets with a left join since they all have the same countries
+
+all_data = EU_countries_water_pollution.merge(
+    EU_countries_GDP,
+    on="Country",
+    how="left"
+)
+
+all_data = all_data.merge(
+    EU_countries_population_pollution,
+    on="Country",
+    how="left"
+)
+
+# 4.2
+# Compute the GDP per capita
+all_data["GDP_per_capita"] = all_data["GDP_USD_Billions"] / all_data["Population"]
+print(all_data)
+
+# On average, what percentage of water bodies are in poor condition in Europe?
+mean_poor_condition = all_data["Water_Bodies_in_Poor_Condition_Percentage"].mean()
+print(mean_poor_condition)
+# Example output might be: 49.07407
+
+# Create a dataset with countries that have a Mean_pollution higher than 15,
+# call this dataset EU_higher_than_fifteen
+
+EU_higher_than_fifteen = all_data[all_data["Mean_pollution"] > 15]
+print(EU_higher_than_fifteen)
+```
+
+# Exercise part 6
+
+```{r, eval = F}
+import pandas as pd
+import os
+
+# 1. Create a DataFrame with 4 columns
+data = {
+    "ID": [1, 2, 3],
+    "Country": ["NL", "BE", "FR"],
+    "Value": [10.5, 20.3, 30.7],
+    "Category": ["A", "B", "C"]
+}
+
+df = pd.DataFrame(data)
+
+print("DataFrame:")
+print(df)
+
+# 2. Export the DataFrame to an .xlsx file
+df.to_excel("toy_data.xlsx", index=False)
+
+# 3. Export the same DataFrame to a .pkl file
+df.to_pickle("toy_data.pkl")
+```
+

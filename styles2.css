@@ -1,0 +1,168 @@
+/* ===================================
+   SIDEBAR SECTION COLORS
+
+   Quarto only ever renders ONE section's sidebar per page (the
+   section the current page belongs to, per _quarto.yml), and that
+   section's first item is always its landing page. So instead of
+   matching individual filenames -- which breaks the moment a page
+   is renamed, added, or capitalized differently -- we detect which
+   section is showing by its landing page and color the whole
+   sidebar from that. Every page in a section is colored
+   automatically, including ones added later.
+   =================================== */
+
+nav#quarto-sidebar:has(li.sidebar-item:first-child a[href*="package.html"]) {
+  --sb-accent: #6c5ce7; /* NetworkIsLifeR package */
+}
+nav#quarto-sidebar:has(li.sidebar-item:first-child a[href*="rhobots_site.html"]) {
+  --sb-accent: #0f3460; /* Rhobots */
+}
+nav#quarto-sidebar:has(li.sidebar-item:first-child a[href*="network.html"]) {
+  --sb-accent: #00cec9; /* Network Analysis */
+}
+nav#quarto-sidebar:has(li.sidebar-item:first-child a[href*="dafs-dst.html"]) {
+  --sb-accent: #0984e3; /* DAFS Data Science Track (R) */
+}
+nav#quarto-sidebar:has(li.sidebar-item:first-child a[href*="dafs-esm.html"]) {
+  --sb-accent: #00b894; /* DAFS ESM Track (Python) */
+}
+
+/* Sub-section colors within DAFS - Data Science Track.
+   --sb-accent is a custom property, so setting it again on a nested
+   section overrides the page-level color for that branch only --
+   the rest of the sidebar keeps the section's default. */
+nav#quarto-sidebar li.sidebar-item-section:has(a[href*="DAFS_install_R.html"]) {
+  --sb-accent: #0984e3; /* Installing the Software */
+}
+nav#quarto-sidebar li.sidebar-item-section:has(a[href*="DAFS_prog_week"], a[href*="DAFS_training_app.html"], a[href*="DAFS_exam_type_questions"]) {
+  --sb-accent: #e17055; /* Programming Basics (Weeks 1-3) */
+}
+nav#quarto-sidebar li.sidebar-item-section:has(a[href*="DAFS_TopicModel_R.html"], a[href*="DAFS_Bertopic"], a[href*="Bertopic_metrics.html"], a[href*="DAFS_DST_"], a[href*="DAFS_LexisUniImport.html"]) {
+  --sb-accent: #6c5ce7; /* Text Mining & NLP */
+}
+
+nav#quarto-sidebar .sidebar-item {
+  border-left: 4px solid var(--sb-accent, transparent);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--sb-accent, transparent) 8%, transparent) 0%, transparent 100%);
+}
+
+nav#quarto-sidebar .sidebar-item a {
+  color: var(--sb-accent, inherit) !important;
+  font-weight: 500;
+}
+
+/* ===================================
+   SECTION HEADERS IN SIDEBAR
+   =================================== */
+
+.sidebar-section .sidebar-section-item {
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.5rem;
+}
+
+/* ===================================
+   GENERAL MODERN STYLING
+   =================================== */
+
+/* Navbar gradient */
+.navbar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+  color: white !important;
+}
+
+.navbar-nav .nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+/* Sidebar modern look */
+.sidebar {
+  background: #f8f9fa;
+  border-right: 1px solid #e9ecef;
+}
+
+.sidebar-title {
+  color: #6c5ce7;
+  font-weight: 700;
+  font-size: 1.3rem;
+  padding: 1rem;
+  background: white;
+  border-bottom: 2px solid #e9ecef;
+}
+
+/* Main content area */
+.quarto-title-block {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  padding: 2.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.quarto-title {
+  color: #2d3436;
+  font-weight: 700;
+}
+
+/* Code blocks */
+.sourceCode {
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+}
+
+/* Links */
+a {
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  transform: translateX(2px);
+}
+
+/* Search box */
+#quarto-search {
+  background: white;
+  border-radius: 8px;
+  border: 2px solid #e9ecef;
+}
+
+#quarto-search:focus-within {
+  border-color: #6c5ce7;
+  box-shadow: 0 0 0 3px rgba(108, 92, 231, 0.1);
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .sidebar {
+    position: static;
+  }
+}
+
+/* Hover effects for sidebar items */
+.sidebar-item {
+  transition: all 0.2s ease;
+  border-radius: 4px;
+  margin: 2px 0;
+}
+
+.sidebar-item:hover {
+  transform: translateX(4px);
+}
+
+/* Active page highlighting */
+.sidebar-item.active {
+  font-weight: 700;
+}
+
+.sidebar-item.active a {
+  font-weight: 700 !important;
+}

@@ -1,0 +1,282 @@
+---
+title: "Solutions R week 3"
+sidebar: dafs-dst
+---
+
+# 3.1 Multiples of 3 and 5
+
+```{r, eval=F, include=T}
+# 1. For loop: print numbers
+
+for (num in 1:50) {
+  # Check if num is divisible by 3 or 5
+  if (num %% 3 == 0 || num %% 5 == 0) {
+    print(num)
+  }
+}
+
+
+
+# 2. While loop: cumulative sum
+
+cum_sum <- 0  # cumulative sum starts at 0
+i <- 1        # start at number 1
+
+while (cum_sum <= 200 && i <= 50) {
+  if (i %% 3 == 0 || i %% 5 == 0) {
+    cum_sum <- cum_sum + i
+  }
+  
+  i <- i + 1  # go to the next number
+}
+
+# Print the final cumulative sum
+cum_sum
+```
+
+# 3.2
+
+```{r, eval=F, include=T}
+data <- data.frame(
+  Region      = c("A", "B", "A", "C", "B", "C", "A"),
+  EnergyUsage = c(10, 20, 30, 40, 50, 60, 70),
+  Sustainable = c(TRUE, FALSE, TRUE, FALSE, TRUE, FALSE, TRUE)
+)
+
+for (i in 1:nrow(data)) {
+  if (data$Sustainable[i] == TRUE && data$EnergyUsage[i] > 20) {
+    print(data[i, ])
+  }
+}
+
+cumulative_usage <- 0              # cumulative EnergyUsage
+i <- 1                      # start at first row
+used_rows <- c()            # to remember which rows contributed
+
+while (cumulative_usage <= 50 && i <= nrow(data)) {
+  if (data$Sustainable[i] == TRUE) {
+    cumulative_usage <- cumulative_usage + data$EnergyUsage[i]
+    used_rows <- c(used_rows, i)
+  }
+  
+  i <- i + 1
+}
+
+# Print the total cumulative EnergyUsage
+cumulative_usage
+
+```
+
+# 3.3
+
+```{r, eval=F, include=T}
+secret_number <- floor(runif(1, min = 1, max = 21))
+# 2. Set up the game variables
+attempts <- 0
+max_attempts <- 5
+guessed_correctly <- FALSE
+
+# 3. While loop for user guesses
+while (attempts < max_attempts && guessed_correctly == FALSE) {
+  
+  cat("Guess the number (between 1 and 20): ")
+  
+  # Read user input as text, then convert to numeric
+  guess <- as.integer(readline(prompt = "Guess a number between 1 and 20: "))
+  
+  # Increase attempt counter
+  attempts <- attempts + 1
+  
+  # Check the guess
+  if (guess == secret_number) {
+    cat("Correct!")
+    guessed_correctly <- TRUE
+  } else if (guess > secret_number) {
+    cat("Too high!")
+  } else if (guess < secret_number) {
+    cat("Too low!")
+  } else {
+    # This happens if the input is not a number (NA)
+    cat("That was not a valid number.")
+  }
+}
+
+# 4. Check if the game ended without a correct guess
+if (guessed_correctly == FALSE) {
+  cat("Game Over! The secret number was:", secret_number, "\n")
+}
+```
+
+# 3.4 working with real data
+
+```{r, eval=F, include=T}
+# Load the data
+DAFS_owid_energy_data <- read_delim("~/Downloads/DAFS_owid_energy_data.csv",   delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+# display first 10 rows
+DAFS_owid_energy_data[1:10,]
+
+# Identify columns and data stucture
+summary(DAFS_owid_energy_data)
+
+# subset the data
+EU_data = subset(DAFS_owid_energy_data, DAFS_owid_energy_data$country %in% c('Netherlands', 'France', 'Belgium', 'Germany', 'Luxemburg', 'Poland', 'Denmark', 'Sweden', 'Finland','Estonia', 'Latvia','Lithuania','Czechia','Slovakia','Hungary','Romania','Bulgaria','Greece','Italy','Croatia','Slovenia','Austria','Spain', 'Portugal','Ireland'))
+# we remove missing data observations
+EU_data = na.omit(EU_data)
+# we make sure the values are numbers
+EU_data$biofuel_electricity = as.numeric(EU_data$biofuel_electricity)
+EU_data$low_carbon_electricity = as.numeric(EU_data$low_carbon_electricity)
+EU_data$nuclear_electricity = as.numeric(EU_data$nuclear_electricity)
+EU_data$other_renewable_electricity= as.numeric(EU_data$other_renewable_electricity)
+# create a new column called renewable_percentage
+EU_data$renewables <- EU_data$biofuel_electricity + EU_data$low_carbon_electricity + EU_data$nuclear_electricity + EU_data$other_renewable_electricity
+# we do the same for the other sources
+EU_data$gas_electricity = as.numeric(EU_data$gas_electricity)
+EU_data$coal_electricity = as.numeric(EU_data$coal_electricity)
+EU_data$fossil_electricity = as.numeric(EU_data$fossil_electricity)
+
+# compute the total
+EU_data$total <- EU_data$biofuel_electricity +
+  EU_data$low_carbon_electricity +
+  EU_data$nuclear_electricity +
+  EU_data$other_renewable_electricity +
+  EU_data$gas_electricity +
+  EU_data$coal_electricity +
+  EU_data$fossil_electricity
+
+# compute the %
+EU_data$pct_renew = EU_data$renewables / EU_data$total
+
+
+# classify the countries
+
+EU_data$class_renew <- ifelse(
+  EU_data$pct_renew > 50, "High Renewable",
+  ifelse(EU_data$pct_renew >= 20, "Medium Renewable", "Low Renewable")
+)
+
+# group and summarize
+
+EU_data_grouped = EU_data %>% group_by(class_renew) %>% summarise(mean(pct_renew))
+
+
+```
+
+# Exercises part 4:
+
+## Exercise 1:
+
+```{r, eval = F ,inlcude = T}
+factorials <- list()
+# Create an empty list called 'factorials'.
+
+for (n in 1:10) {
+  # Start a for-loop where n goes from 1 to 10.
+
+  fact <- 1
+  # Set 'fact' to 1.
+
+  counter <- n
+  # Set 'counter' to the current value of n.
+
+  while (counter > 1) {
+    # Start a while-loop that keeps going as long as 'counter' is greater than 1.
+
+    fact <- fact * counter
+    # Multiply 'fact' by the current value of 'counter'.
+
+    counter <- counter - 1
+    # Decrease 'counter' by 1 so we move towards 1 and eventually stop the loop.
+  }
+
+  factorials[[as.character(n)]] <- fact
+  # Store the result in the list 'factorials'.
+  # Use the current number 'n' (turned into text with as.character) as the name of the element.
+
+}
+
+print(factorials)
+# Print the whole list of factorials for the numbers 1 to 10.
+```
+
+## Exercise 2
+
+```{r, eval=F, include=T}
+discounted_prices <- c()
+# Create an empty vector called 'discounted_prices'.
+
+
+for (i in 1:nrow(products)) {
+  # Start a for-loop that goes through each row of the 'products' dataframe.
+
+
+  price <- products$Price[i]
+  # Take the value from the 'Price' column in row i and store it in 'price'.
+
+  in_stock <- products$InStock[i]
+  # Take the value from the 'InStock' column in row i and store it in 'in_stock'.
+
+
+  if (price > 50 && in_stock) {
+    # If the price is greater than 50 AND the product is in stock (TRUE)...
+
+    new_price <- price * 0.9
+    # ...give a 10% discount (multiply by 0.9).
+
+  } else if (price <= 50 && in_stock) {
+    # Otherwise, if the price is 50 or less AND the product is in stock...
+
+    new_price <- price * 0.95 
+    # ...give a 5% discount (multiply by 0.95).
+
+  } else {
+    # In all other cases (for example, not in stock)...
+
+    new_price <- price
+    # ...do not change the price (no discount).
+  }
+
+  discounted_prices <- c(discounted_prices, new_price)
+  # Add the new_price to the end of the 'discounted_prices' vector.
+  # After the loop, this vector will have one discounted price per product.
+}
+
+products$DiscountedPrice <- discounted_prices
+# Create a new column in the 'products' dataframe called 'DiscountedPrice'
+# and fill it with all the values from 'discounted_prices'.
+
+print(products)
+# Print the 'products' dataframe so we can see the original and discounted prices.
+```
+
+# writing code
+
+```{r, eval = F, include=T}
+# Set the correct password
+correct_password <- "mypassword"
+
+# Start with 0 attempts
+attempts <- 0
+success <- FALSE
+
+# Allow up to 3 attempts
+while (attempts < 3 && success == FALSE) {
+  
+  cat("Enter password: ")
+  guess <- as.string(readline(prompt = "Guess the password: "))
+  
+  if (user_input == correct_password) {
+    cat("success!")
+    success <- TRUE
+  } else {
+    cat("Incorrect password.")
+    attempts <- attempts + 1
+  }
+}
+
+# If the user never succeeded in 3 tries:
+if (success == FALSE) {
+  cat("Too many failed attempts. System locked.")
+}
+
+```
