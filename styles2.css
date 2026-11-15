@@ -166,3 +166,59 @@ a:hover {
 .sidebar-item.active a {
   font-weight: 700 !important;
 }
+/* ===================================
+   TRACK CHOOSER (home page) & TRACK BUTTONS
+   R = blue (#0984e3), Python = green (#00b894),
+   matching the sidebar colors above.
+   =================================== */
+.track-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+.track-card {
+  --track: #6c5ce7;
+  border: 1px solid #e9ecef;
+  border-top: 6px solid var(--track);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.track-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+.track-card.track-r  { --track: #0984e3; }
+.track-card.track-py { --track: #00b894; }
+.track-card h3 {
+  margin-top: 0.75rem;
+  border-bottom: none;
+}
+.track-card .track-name { color: var(--track); }
+.track-card p { margin-bottom: 0.75rem; }
+.track-logo {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+}
+.track-card a:hover,
+a.track-btn:hover { transform: none; }
+
+a.track-btn {
+  background: var(--track, #6c5ce7);
+  border: none;
+  color: white !important;
+  font-weight: 600;
+  padding: 0.5rem 1.1rem;
+  border-radius: 6px;
+  text-decoration: none;
+}
+a.track-btn:hover { filter: brightness(0.92); }
+
+/* Buttons on the track landing pages take the track's color */
+body:has(nav#quarto-sidebar li.sidebar-item:first-child a[href*="dafs-dst.html"]) { --track: #0984e3; }
+body:has(nav#quarto-sidebar li.sidebar-item:first-child a[href*="dafs-esm.html"]) { --track: #00b894; }

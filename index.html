@@ -76,7 +76,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles2.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -102,16 +102,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./DAFS_prog_week_1_R.html"> 
+    <a class="nav-link" href="./dafs-dst.html"> 
 <span class="menu-text">Data Science Track (R)</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./DAFS_prog_week_1_python.html"> 
+    <a class="nav-link" href="./dafs-esm.html"> 
 <span class="menu-text">ESM Track (Python)</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./install_app.html"> 
-<span class="menu-text">Teaching App</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -124,15 +120,14 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">DAFS Programming Basics</h1>
+<p class="subtitle lead">Data Analytics For Sustainability: programming materials for weeks 1–3</p>
 </div>
 
 
@@ -155,15 +150,43 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Programming materials for weeks 1–3.</p>
-<ul>
-<li><strong>Data Science Track (R):</strong> <a href="./DAFS_prog_week_1_R.html">Week 1</a> · <a href="./DAFS_prog_week_2_R.html">Week 2</a> · <a href="./DAFS_prog_week_3_R.html">Week 3</a></li>
-<li><strong>ESM Track (Python):</strong> <a href="./DAFS_prog_week_1_python.html">Week 1</a> · <a href="./DAFS_prog_week_2_Python.html">Week 2</a> · <a href="./DAFS_prog_week_3_Python.html">Week 3</a></li>
-<li><strong>Combined R &amp; Python:</strong> <a href="./DAFS_prog_week_1.html">Week 1</a> · <a href="./DAFS_prog_week_2.html">Week 2</a> · <a href="./DAFS_prog_week_3.html">Week 3</a></li>
-</ul>
-<p><strong>DAFS Teaching App (Python):</strong> practise the Python lessons with instant feedback. See <a href="./install_app.html">how to install the app</a> (Windows and macOS, no prior experience needed).</p>
+<section id="choose-your-track" class="level2">
+<h2 class="anchored" data-anchor-id="choose-your-track">Choose your track</h2>
+<p>You follow <strong>one</strong> track: either R or Python. Click your track to find everything you need: how to set up your laptop, the teaching app, and the materials for each week.</p>
+<div class="track-cards">
+<div class="track-card track-r">
+<p><a href="./dafs-dst.html"><img src="Rlogo.png" class="track-logo img-fluid" alt="R logo"></a></p>
+<section id="data-science-track" class="level3">
+<h3 class="anchored" data-anchor-id="data-science-track"><span class="track-name">Data Science Track</span></h3>
+<p>You program in <strong>R</strong>, using <strong>RStudio</strong>.</p>
+<p><a href="./dafs-dst.html" class="btn track-btn">Go to the R track →</a></p>
+</section>
+</div>
+<div class="track-card track-py">
+<p><a href="./dafs-esm.html"><img src="Pythonlogo.png" class="track-logo img-fluid" alt="Python logo"></a></p>
+<section id="esm-track" class="level3">
+<h3 class="anchored" data-anchor-id="esm-track"><span class="track-name">ESM Track</span></h3>
+<p>You program in <strong>Python</strong>, using <strong>Jupyter Notebooks</strong>.</p>
+<p><a href="./dafs-esm.html" class="btn track-btn">Go to the Python track →</a></p>
+</section>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Not sure which track you’re in?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Check the course page on Brightspace, or ask your instructor in the first lab session. Stick to the materials of your own track: the R and Python exercises are different.</p>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -239,7 +262,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/DAFSUU\.github\.io\/DAFS_website\/");
+        var filterRegex = new RegExp('/' + window.location.host + '/');
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

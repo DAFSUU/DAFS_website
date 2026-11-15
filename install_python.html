@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Janpieter van der Pol">
+
+<title>Installing Python, Anaconda and Jupyter – DAFS Programming</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f1918b28de1c80740b5252e80a95a6f4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles2.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="././imgs/logo5.png" alt="" class="navbar-logo light-content">
+    <img src="././imgs/logo5.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">DAFS Programming</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dafs-dst.html"> 
+<span class="menu-text">Data Science Track (R)</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./dafs-esm.html" aria-current="page"> 
+<span class="menu-text">ESM Track (Python)</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install_python.html">Getting set up</a></li><li class="breadcrumb-item"><a href="./install_python.html">Install Python, Anaconda &amp; Jupyter</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dafs-esm.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Start here</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting set up</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install_python.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Install Python, Anaconda &amp; Jupyter</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install the Python Teaching App</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_1_python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1: The programming basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_1_python_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions Python week 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_2_Python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2: If, loading data &amp; data operations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_2_python_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions Python week 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_3_Python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3: Loops and exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_3_python_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions Python week 3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#before-you-start-three-rules" id="toc-before-you-start-three-rules" class="nav-link active" data-scroll-target="#before-you-start-three-rules"><span class="header-section-number">1</span> Before you start: three rules</a></li>
+  <li><a href="#download-anaconda" id="toc-download-anaconda" class="nav-link" data-scroll-target="#download-anaconda"><span class="header-section-number">2</span> Download Anaconda</a></li>
+  <li><a href="#install-anaconda" id="toc-install-anaconda" class="nav-link" data-scroll-target="#install-anaconda"><span class="header-section-number">3</span> Install Anaconda</a></li>
+  <li><a href="#prompt" id="toc-prompt" class="nav-link" data-scroll-target="#prompt"><span class="header-section-number">4</span> Open the Anaconda command window</a></li>
+  <li><a href="#check" id="toc-check" class="nav-link" data-scroll-target="#check"><span class="header-section-number">5</span> Check that everything works</a></li>
+  <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter"><span class="header-section-number">6</span> Start Jupyter Notebook</a>
+  <ul class="collapse">
+  <li><a href="#make-a-folder-for-this-course" id="toc-make-a-folder-for-this-course" class="nav-link" data-scroll-target="#make-a-folder-for-this-course"><span class="header-section-number">6.1</span> Make a folder for this course</a></li>
+  <li><a href="#your-first-notebook" id="toc-your-first-notebook" class="nav-link" data-scroll-target="#your-first-notebook"><span class="header-section-number">6.2</span> Your first notebook</a></li>
+  </ul></li>
+  <li><a href="#stopping-jupyter" id="toc-stopping-jupyter" class="nav-link" data-scroll-target="#stopping-jupyter"><span class="header-section-number">7</span> Stopping Jupyter</a></li>
+  <li><a href="#installing-extra-packages" id="toc-installing-extra-packages" class="nav-link" data-scroll-target="#installing-extra-packages"><span class="header-section-number">8</span> Installing extra packages</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">9</span> Troubleshooting</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./install_python.html">Getting set up</a></li><li class="breadcrumb-item"><a href="./install_python.html">Install Python, Anaconda &amp; Jupyter</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Installing Python, Anaconda and Jupyter</h1>
+<p class="subtitle lead">A step-by-step setup guide for Windows and macOS: no programming experience needed</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Janpieter van der Pol </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this course you write Python code in <strong>Jupyter Notebooks</strong>. To get those on your laptop, you install one program: <strong>Anaconda</strong>. Anaconda contains:</p>
+<ul>
+<li><strong>Python</strong>, the programming language;</li>
+<li><strong>Jupyter Notebook</strong>, the program you write and run your code in (it opens in your web browser);</li>
+<li>the packages we use in class (<strong>pandas</strong>, <strong>NumPy</strong>, <strong>matplotlib</strong>, …), already installed;</li>
+<li><strong>Anaconda Prompt</strong> (Windows) / the <strong>Terminal</strong> (macOS), a window to type the occasional command in.</li>
+</ul>
+<p>This page takes you through the installation step by step. Choose your operating system in the tabs below; the choice carries over to all other tabs on this page.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Set aside 30 minutes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Anaconda is a big download (about 1 GB) and takes 10–20 minutes to install. Use a stable internet connection, plug in your charger, and do this <strong>before</strong> the first lab session.</p>
+</div>
+</div>
+<section id="before-you-start-three-rules" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Before you start: three rules</h1>
+<p>These three rules prevent almost every installation problem we’ve seen in previous years.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>1. Install Python only via Anaconda
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do <strong>not</strong> install Python from the Microsoft Store or from python.org for this course. If you already have such a Python, you don’t need to remove it. Just follow this guide, and we’ll make sure you always use the Anaconda one.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>2. Windows: do <em>not</em> tick “Add Anaconda to my PATH”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The installer offers this option. Leave it <strong>unticked</strong>. Instead of changing Windows settings, you’ll use the <strong>Anaconda Prompt</strong>, which always finds the right Python.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>3. Install only one Anaconda
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If you already have Anaconda from another course, <strong>don’t install it a second time</strong>. Skip to <a href="#check">Check that everything works</a>. If that check fails, uninstall the old Anaconda first (see <a href="#troubleshooting">Troubleshooting</a>).</p>
+</div>
+</div>
+</section>
+<section id="download-anaconda" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Download Anaconda</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<ol type="1">
+<li>Go to <a href="https://www.anaconda.com/download">anaconda.com/download</a>.</li>
+<li>Anaconda asks for your <strong>email address</strong> before you can download. Use your student email and follow the link you receive. Registration is free. (If you see a <strong>Skip registration</strong> link, you can use that instead.)</li>
+<li>Under <strong>Anaconda Distribution</strong>, download the <strong>Windows 64-bit graphical installer</strong>. The file is called something like <code>Anaconda3-2026.07-1-Windows-x86_64.exe</code>.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Don’t pick “Miniconda”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The download page also offers <strong>Miniconda</strong>. That is a stripped-down version without Jupyter and the packages we need. Make sure you download <strong>Anaconda Distribution</strong>.</p>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>First, find out which kind of Mac you have: click the <strong>Apple menu ()</strong> in the top-left corner → <strong>About This Mac</strong>.</p>
+<ul>
+<li>If it says <strong>Chip: Apple M1/M2/M3/M4/…</strong>, you have an <strong>Apple silicon</strong> Mac (most Macs from 2021 onwards).</li>
+<li>If it says <strong>Processor: … Intel …</strong>, you have an <strong>Intel</strong> Mac.</li>
+</ul>
+<p><strong>Apple silicon (M1, M2, …):</strong></p>
+<ol type="1">
+<li>Go to <a href="https://www.anaconda.com/download">anaconda.com/download</a>.</li>
+<li>Anaconda asks for your <strong>email address</strong> before you can download. Use your student email and follow the link you receive. Registration is free. (If you see a <strong>Skip registration</strong> link, you can use that instead.)</li>
+<li>Under <strong>Anaconda Distribution</strong>, download the <strong>64-bit (Apple silicon) graphical installer</strong>. The file is called something like <code>Anaconda3-2026.07-1-MacOSX-arm64.pkg</code>.</li>
+</ol>
+<p><strong>Intel Mac:</strong> Anaconda no longer makes new versions for Intel Macs, so the download page won’t offer one. Download the last Intel version directly from this link instead (no registration needed). It works fine for this course:</p>
+<p><a href="https://repo.anaconda.com/archive/Anaconda3-2025.06-1-MacOSX-x86_64.pkg">Anaconda3-2025.06-1-MacOSX-x86_64.pkg</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Don’t pick “Miniconda”
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The download page also offers <strong>Miniconda</strong>. That is a stripped-down version without Jupyter and the packages we need. Make sure you download <strong>Anaconda Distribution</strong>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="install-anaconda" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Install Anaconda</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Open your <strong>Downloads</strong> folder and double-click the installer. Then go through the screens like this:</p>
+<ol type="1">
+<li><p><strong>Welcome</strong>: click <strong>Next</strong>.</p></li>
+<li><p><strong>License Agreement</strong>: click <strong>I Agree</strong>.</p></li>
+<li><p><strong>Select Installation Type</strong>: choose <strong>Just Me (recommended)</strong>, then <strong>Next</strong>.</p></li>
+<li><p><strong>Choose Install Location</strong>: look at the folder it suggests, for example <code>C:\Users\jdevries\anaconda3</code>.</p>
+<ul>
+<li>If that path has <strong>no spaces</strong> and <strong>no special characters</strong> (like é, ë, ü, ø, &amp;), keep it and click <strong>Next</strong>.</li>
+<li>If your username has spaces or special characters (for example <code>C:\Users\Jan de Vries\anaconda3</code> or <code>C:\Users\Zoë\anaconda3</code>), change the folder to <strong><code>C:\anaconda3</code></strong> and click <strong>Next</strong>.</li>
+</ul></li>
+<li><p><strong>Advanced Installation Options</strong>: set the boxes like this:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Option</th>
+<th>Set to</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Create shortcuts</td>
+<td>✅ ticked</td>
+</tr>
+<tr class="even">
+<td><strong>Add Anaconda3 to my PATH environment variable</strong></td>
+<td>❌ <strong>not ticked</strong></td>
+</tr>
+<tr class="odd">
+<td>Register Anaconda3 as my default Python</td>
+<td>✅ ticked</td>
+</tr>
+<tr class="even">
+<td>Clear the package cache upon completion</td>
+<td>✅ ticked</td>
+</tr>
+</tbody>
+</table>
+<p>Then click <strong>Install</strong>.</p></li>
+<li><p>Wait. This takes <strong>10–20 minutes</strong>. The progress bar sometimes seems stuck on one file for a few minutes; that’s normal. Don’t close the window.</p></li>
+<li><p>Click <strong>Next</strong> until you see <strong>Finish</strong>. You can untick the boxes about tutorials and getting started, then click <strong>Finish</strong>.</p></li>
+</ol>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Warning</span>Windows Security / antivirus warnings
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Windows may ask “Do you want to allow this app to make changes to your device?”. Click <strong>Yes</strong>. Anaconda is safe.</p>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>Open your <strong>Downloads</strong> folder and double-click the <code>.pkg</code> file. Then:</p>
+<ol type="1">
+<li>Click <strong>Continue</strong> on the introduction screens.</li>
+<li><strong>License</strong>: click <strong>Continue</strong>, then <strong>Agree</strong>.</li>
+<li><strong>Installation Type / Destination</strong>: keep the suggested option and click <strong>Continue</strong>, then <strong>Install</strong>.</li>
+<li>Enter your <strong>Mac password</strong> when asked (the one you use to log in).</li>
+<li>Wait <strong>5–15 minutes</strong>, then click <strong>Close</strong>. If macOS asks whether to move the installer to the Bin, you can say yes.</li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="prompt" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Open the Anaconda command window</h1>
+<p>Once in a while you’ll need to type a command (for example to start Jupyter, or to install an extra package). <strong>Always</strong> use the window below for this.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Click <strong>Start</strong>, type <strong>Anaconda Prompt</strong>, and open it.</p>
+<p>A black window opens. The line starts with <strong><code>(base)</code></strong>, for example:</p>
+<pre><code>(base) C:\Users\jdevries&gt;</code></pre>
+<p>The <code>(base)</code> tells you that Anaconda’s Python is active.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Use Anaconda Prompt, not Command Prompt or PowerShell
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Windows also has <strong>Command Prompt</strong>, <strong>PowerShell</strong> and <strong>Terminal</strong>. Those do <strong>not</strong> know about Anaconda (because we didn’t add it to the PATH, on purpose). If a command on this website says <em>“python is not recognized”</em> or opens the Microsoft Store, you’re in the wrong window. Close it and open <strong>Anaconda Prompt</strong> instead.</p>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Press <strong><code>Cmd</code> + <code>Space</code></strong>, type <strong>Terminal</strong>, and press <strong>Enter</strong>.</p>
+<p>The line should start with <strong><code>(base)</code></strong>, for example:</p>
+<pre><code>(base) jan@MacBook-Air ~ %</code></pre>
+<p>The <code>(base)</code> tells you that Anaconda’s Python is active.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Don’t see <code>(base)</code>?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Close <strong>all</strong> Terminal windows (<code>Cmd + Q</code> quits Terminal completely) and open Terminal again. Terminal windows that were open during the installation don’t know about Anaconda yet. Still no <code>(base)</code>? See <a href="#troubleshooting">Troubleshooting</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>How to paste a command
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every code block on this page has a <strong>copy</strong> button in its top-right corner. Click it, then paste in the window (<strong>Windows:</strong> right-click or <code>Ctrl + V</code>; <strong>macOS:</strong> <code>Cmd + V</code>) and press <strong>Enter</strong>.</p>
+</div>
+</div>
+</section>
+<section id="check" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Check that everything works</h1>
+<p>In the Anaconda Prompt (Windows) or Terminal (macOS), paste this and press <strong>Enter</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import sys, pandas, numpy, matplotlib; print('Python', sys.version.split()[0]); print(sys.executable)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see two lines like this:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false" href="">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
+<pre><code>Python 3.14.0
+C:\Users\jdevries\anaconda3\python.exe</code></pre>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<pre><code>Python 3.14.0
+/opt/anaconda3/bin/python</code></pre>
+</div>
+</div>
+</div>
+<p>Check two things:</p>
+<ul>
+<li>The version is <strong>3.10 or higher</strong>. The exact number doesn’t matter.</li>
+<li>The second line contains <strong><code>anaconda3</code></strong>. This proves you’re using Anaconda’s Python and not another one.</li>
+</ul>
+<p>If you get an error instead, see <a href="#troubleshooting">Troubleshooting</a>.</p>
+</section>
+<section id="jupyter" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Start Jupyter Notebook</h1>
+<ol type="1">
+<li><p>Open the <strong>Anaconda Prompt</strong> (Windows) or <strong>Terminal</strong> (macOS), as in <a href="#prompt">Open the Anaconda command window</a>.</p></li>
+<li><p>Type this and press <strong>Enter</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>After a few seconds, Jupyter opens in your web browser. It shows the files and folders in your home folder.</p></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Keep the black/Terminal window open
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>That window is what runs Jupyter. If you close it, Jupyter stops working and you can’t save your notebook anymore. Minimise it, but keep it open while you work.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Prefer clicking? Use Anaconda Navigator
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can also open <strong>Anaconda Navigator</strong> (Windows: from the Start menu; macOS: from your <strong>Applications</strong> folder), and click <strong>Launch</strong> under <strong>Jupyter Notebook</strong>. The result is the same. If Navigator is slow or doesn’t open, use the <code>jupyter notebook</code> command above. It’s the more reliable route.</p>
+</div>
+</div>
+<section id="make-a-folder-for-this-course" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="make-a-folder-for-this-course"><span class="header-section-number">6.1</span> Make a folder for this course</h2>
+<p>Keep all your course files in one place. In Jupyter’s file view:</p>
+<ol type="1">
+<li>Click <strong>New</strong> (top right) → <strong>New Folder</strong>.</li>
+<li>Select the new folder (tick the box in front of <code>Untitled Folder</code>), click <strong>Rename</strong>, and call it <strong><code>DAFS</code></strong>.</li>
+<li>Click the <code>DAFS</code> folder to open it. Put your notebooks <strong>and the data files</strong> you download for the course in this folder.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Why this folder?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Your notebook looks for data files in the folder it is in. If the notebook and the data file are in the same folder, <code>pd.read_csv("data.csv")</code> just works. Most “file not found” errors in this course come from data files that are still sitting in the Downloads folder.</p>
+<p>To get a downloaded file into this folder, use Jupyter’s <strong>Upload</strong> button (top right) while you’re in the <code>DAFS</code> folder.</p>
+</div>
+</div>
+</section>
+<section id="your-first-notebook" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="your-first-notebook"><span class="header-section-number">6.2</span> Your first notebook</h2>
+<ol type="1">
+<li><p>Inside the <code>DAFS</code> folder, click <strong>New</strong> → <strong>Notebook</strong>. If it asks for a kernel, choose <strong>Python 3</strong>.</p></li>
+<li><p>Click in the first cell, type the line below, and press <strong><code>Shift</code> + <code>Enter</code></strong> to run it:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, I'm ready for DAFS!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>If the text appears below the cell, <strong>your setup is complete!</strong></p></li>
+<li><p>Save with <strong><code>Ctrl + S</code></strong> (macOS: <strong><code>Cmd + S</code></strong>). Rename the notebook by clicking its name (<code>Untitled</code>) at the top.</p></li>
+</ol>
+</section>
+</section>
+<section id="stopping-jupyter" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Stopping Jupyter</h1>
+<p>When you’re done:</p>
+<ol type="1">
+<li>Save your notebook.</li>
+<li>In Jupyter, go to <strong>File</strong> → <strong>Shut Down</strong> (in older versions: click <strong>Quit</strong> in the file view).</li>
+<li>You can now close the browser tab and the Anaconda Prompt / Terminal.</li>
+</ol>
+<p>If that doesn’t work, click inside the Anaconda Prompt / Terminal window and press <strong><code>Ctrl + C</code></strong> (also on a Mac: <code>Ctrl</code>, not <code>Cmd</code>). Press it twice if needed, or type <code>y</code> and <strong>Enter</strong> if it asks for confirmation.</p>
+</section>
+<section id="installing-extra-packages" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Installing extra packages</h1>
+<p>Anaconda already has almost everything we use. If you do need to install an extra package, do it <strong>inside your notebook</strong> with <code>%pip</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install packagename</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>After installing, <strong>restart the kernel</strong>: <strong>Kernel</strong> → <strong>Restart Kernel</strong>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Why <code>%pip</code> and not <code>pip</code> or <code>!pip</code>?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><code>%pip</code> always installs the package into the exact Python your notebook is using. <code>!pip</code> or <code>pip</code> in another window can install it into a <em>different</em> Python on your computer, after which the notebook still says <code>ModuleNotFoundError</code>. That’s the classic “I installed it but it doesn’t work” problem.</p>
+</div>
+</div>
+</section>
+<section id="troubleshooting" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Troubleshooting</h1>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<dl>
+<dt><strong><code>'python' is not recognized…</code>, <code>'jupyter' is not recognized…</code>, or the Microsoft Store opens</strong></dt>
+<dd>
+You typed the command in <strong>Command Prompt</strong>, <strong>PowerShell</strong> or <strong>Terminal</strong>. Close that window, open <strong>Anaconda Prompt</strong> from the Start menu, and try again.
+</dd>
+<dt><strong>I can’t find “Anaconda Prompt” in the Start menu</strong></dt>
+<dd>
+The installation didn’t finish, or “Create shortcuts” was unticked. Run the installer again (see <a href="#install-anaconda">Install Anaconda</a>).
+</dd>
+<dt><strong>The check shows a path <em>without</em> <code>anaconda3</code></strong> (for example with <code>WindowsApps</code> or <code>Python314</code>)</dt>
+<dd>
+You’re not in the Anaconda Prompt. Open <strong>Anaconda Prompt</strong> and run the check again.
+</dd>
+<dt><strong>The installer says the path contains spaces or invalid characters</strong></dt>
+<dd>
+Change the install folder to <code>C:\anaconda3</code> (see step 4 of <a href="#install-anaconda">Install Anaconda</a>).
+</dd>
+<dt><strong>“Access is denied”, “Setup was unable to create the directory”, or “Error opening file for writing” during installation</strong></dt>
+<dd>
+Move the installer to your <strong>Downloads</strong> folder (not Favorites, not OneDrive), and run it from there. If your antivirus is blocking the install, turn it off temporarily during the installation, and turn it back on afterwards. On a laptop managed by your employer, you may need your IT department.
+</dd>
+<dt><strong>I ticked “Add Anaconda3 to my PATH” by accident</strong></dt>
+<dd>
+Uninstall Anaconda (Start → <strong>Settings</strong> → <strong>Apps</strong> → <strong>Anaconda3</strong> → <strong>Uninstall</strong>) and install it again without ticking that box.
+</dd>
+</dl>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<dl>
+<dt><strong>No <code>(base)</code> in Terminal, or <code>zsh: command not found: conda</code> / <code>jupyter</code></strong></dt>
+<dd>
+First quit Terminal completely (<code>Cmd + Q</code>) and open it again. If it still doesn’t work, paste this command, press <strong>Enter</strong>, then quit and reopen Terminal:
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/opt/anaconda3/bin/conda</span> init zsh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</dd>
+<dt><strong>The check shows a path <em>without</em> <code>anaconda3</code></strong> (for example <code>/usr/bin/python3</code> or <code>/Library/Frameworks/...</code> or <code>/opt/homebrew/...</code>)</dt>
+<dd>
+Terminal is using a different Python. Do the <code>conda init</code> step above, quit Terminal, reopen it, and check that you see <code>(base)</code>.
+</dd>
+<dt><strong>“The installer can’t be opened because it is from an unidentified developer”</strong></dt>
+<dd>
+Right-click (or <code>Ctrl</code>-click) the <code>.pkg</code> file, choose <strong>Open</strong>, and then <strong>Open</strong> again.
+</dd>
+<dt><strong>A pop-up asks to install “command line developer tools”</strong></dt>
+<dd>
+Click <strong>Cancel</strong>. You typed <code>python3</code> (or <code>git</code>) in a Terminal that doesn’t know about Anaconda. Quit Terminal (<code>Cmd + Q</code>), reopen it, and make sure you see <code>(base)</code>.
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<p><strong>Both systems:</strong></p>
+<dl>
+<dt><strong><code>ModuleNotFoundError: No module named ...</code> in a notebook</strong></dt>
+<dd>
+Install the package with <code>%pip install ...</code> <em>inside the notebook</em>, then <strong>Kernel</strong> → <strong>Restart Kernel</strong> (see <a href="#installing-extra-packages">Installing extra packages</a>).
+</dd>
+<dt><strong><code>FileNotFoundError</code> when reading a data file</strong></dt>
+<dd>
+The data file is not in the same folder as your notebook. Upload it into your <code>DAFS</code> folder (see <a href="#make-a-folder-for-this-course">Make a folder for this course</a>).
+</dd>
+<dt><strong>Jupyter opens, but my notebook won’t save, or cells don’t run anymore</strong></dt>
+<dd>
+You probably closed the Anaconda Prompt / Terminal window. Start Jupyter again with <code>jupyter notebook</code>.
+</dd>
+<dt><strong>The download page looks different from what’s described here</strong></dt>
+<dd>
+Anaconda sometimes redesigns its website. You can always download the installer directly from <a href="https://repo.anaconda.com/archive/">repo.anaconda.com/archive</a> (no registration). Pick the newest file ending in <code>-Windows-x86_64.exe</code> (Windows) or <code>-MacOSX-arm64.pkg</code> (Apple silicon Mac). Intel Macs: use the link in <a href="#download-anaconda">Download Anaconda</a>.
+</dd>
+<dt><strong>My old Anaconda doesn’t work / I want to start over</strong></dt>
+<dd>
+Uninstall it first. <strong>Windows:</strong> Start → <strong>Settings</strong> → <strong>Apps</strong> → <strong>Anaconda3</strong> → <strong>Uninstall</strong>. <strong>macOS:</strong> in Terminal, run the command below and type your Mac password when asked (you won’t see it as you type, that’s normal). Then quit Terminal.
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> rm <span class="at">-rf</span> /opt/anaconda3 ~/anaconda3 ~/opt/anaconda3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+Then install Anaconda again following this guide. Not comfortable doing this? Bring your laptop to the lab session and we’ll do it together.
+</dd>
+<dt><strong>Still stuck?</strong></dt>
+<dd>
+Take a screenshot of the <strong>whole</strong> window (including the error) and bring it to the lab session, or post it on the course forum on Brightspace.
+</dd>
+</dl>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
