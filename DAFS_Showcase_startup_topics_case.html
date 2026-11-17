@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Janpieter van der Pol">
+
+<title>Case study: what start-ups do, where they are, and who funds them – DAFS Programming</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-f1918b28de1c80740b5252e80a95a6f4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles2.css">
+</head>
+
+<body class="nav-sidebar floating nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="././imgs/logo5.png" alt="" class="navbar-logo light-content">
+    <img src="././imgs/logo5.png" alt="" class="navbar-logo dark-content">
+    </a>
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">DAFS Programming</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./dafs-dst.html" aria-current="page"> 
+<span class="menu-text">Data Science Track (R)</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./dafs-esm.html"> 
+<span class="menu-text">ESM Track (Python)</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./DAFS_Showcase_ep_speeches_showcase.html">Showcase</a></li><li class="breadcrumb-item"><a href="./DAFS_Showcase_startup_topics_case.html">Start-ups: topics and funding</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./dafs-dst.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Start here</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Getting set up</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./install_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install R &amp; RStudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_student_guide_R_install_teaching_app.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Install the R Teaching App</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 1</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_1_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 1: The programming basics</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_1_R_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions R week 1</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 2</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_2_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 2: If, loading data &amp; data operations</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_2_R_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions R week 2</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">Week 3</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_3_R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Week 3: Loops and exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_prog_week_3_R_solutions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Solutions R week 3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Showcase</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_Showcase_ep_speeches_showcase.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">European Parliament speeches</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_Showcase_green_innovation_policy_case.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Green innovation policy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_Showcase_green_transition_case.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Framing the green transition</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./DAFS_Showcase_startup_topics_case.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Start-ups: topics and funding</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./course_page/critical_materials_text_mining.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Critical raw materials in patents</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#step-1-the-data" id="toc-step-1-the-data" class="nav-link active" data-scroll-target="#step-1-the-data">Step 1: the data</a></li>
+  <li><a href="#step-2-the-topic-model" id="toc-step-2-the-topic-model" class="nav-link" data-scroll-target="#step-2-the-topic-model">Step 2: the topic model</a>
+  <ul class="collapse">
+  <li><a href="#labelling-the-topics-and-two-lessons-on-prompting" id="toc-labelling-the-topics-and-two-lessons-on-prompting" class="nav-link" data-scroll-target="#labelling-the-topics-and-two-lessons-on-prompting">Labelling the topics, and two lessons on prompting</a></li>
+  </ul></li>
+  <li><a href="#step-3-topics-and-industries-see-different-things" id="toc-step-3-topics-and-industries-see-different-things" class="nav-link" data-scroll-target="#step-3-topics-and-industries-see-different-things">Step 3: topics and industries see different things</a></li>
+  <li><a href="#step-4-where-the-topics-are" id="toc-step-4-where-the-topics-are" class="nav-link" data-scroll-target="#step-4-where-the-topics-are">Step 4: where the topics are</a></li>
+  <li><a href="#step-5-who-invests-where-per-topic" id="toc-step-5-who-invests-where-per-topic" class="nav-link" data-scroll-target="#step-5-who-invests-where-per-topic">Step 5: who invests where, per topic</a></li>
+  <li><a href="#the-answer" id="toc-the-answer" class="nav-link" data-scroll-target="#the-answer">The answer</a></li>
+  <li><a href="#the-full-analysis" id="toc-the-full-analysis" class="nav-link" data-scroll-target="#the-full-analysis">The full analysis</a></li>
+  <li><a href="#what-topics-as-a-datapoint-make-possible" id="toc-what-topics-as-a-datapoint-make-possible" class="nav-link" data-scroll-target="#what-topics-as-a-datapoint-make-possible">What topics as a datapoint make possible</a></li>
+  <li><a href="#what-this-case-teaches" id="toc-what-this-case-teaches" class="nav-link" data-scroll-target="#what-this-case-teaches">What this case teaches</a></li>
+  <li><a href="#questions-for-discussion" id="toc-questions-for-discussion" class="nav-link" data-scroll-target="#questions-for-discussion">Questions for discussion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./DAFS_Showcase_ep_speeches_showcase.html">Showcase</a></li><li class="breadcrumb-item"><a href="./DAFS_Showcase_startup_topics_case.html">Start-ups: topics and funding</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Case study: what start-ups do, where they are, and who funds them</h1>
+<p class="subtitle lead">A topic model of 81,285 European start-up descriptions, compared with the industry labels of a start-up database</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Janpieter van der Pol </p>
+          </div>
+  </div>
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Start-up databases sort companies into <strong>industries</strong> that were chosen in advance: health, fintech, energy. These lists are useful, but they describe markets, they change slowly, and they have no name for a new group of companies. Yet every start-up in the database also has a <strong>description</strong> of what it does. This case study reads those descriptions with a topic model and asks what the topics show that the industry labels do not. Once every start-up has a topic, the topic becomes a variable like any other: we can compare it with the existing classification, map it, and follow the money that flows into it.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>The research question
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>What does a topic model of start-up descriptions show that the industry labels of a start-up database do not, and how are these topics spread across Europe and linked by cross-border investment?</strong></p>
+</div>
+</div>
+<section id="step-1-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="step-1-the-data">Step 1: the data</h2>
+<p><a href="https://dealroom.co">Dealroom</a> tracks start-ups and their investors. Our export covers European start-ups, with for each start-up a tagline, a longer description, its headquarters, Dealroom’s industries and sub-industries, and its funding rounds with the investors that took part.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>Start-ups</td>
+<td>81,285 with at least one funding round in 2015–2025 and a description</td>
+</tr>
+<tr class="even">
+<td>Text per start-up</td>
+<td>tagline + first 1,500 characters of the description (median 1,550 characters)</td>
+</tr>
+<tr class="odd">
+<td>Existing classification</td>
+<td>28 industries (93% of start-ups have one) and 77 sub-industries</td>
+</tr>
+<tr class="even">
+<td>Investments</td>
+<td>254,867: one investor taking part in one funding round, with the investor’s country</td>
+</tr>
+<tr class="odd">
+<td>Investors</td>
+<td>54,875</td>
+</tr>
+</tbody>
+</table>
+<p>The descriptions need some cleaning before anything else: HTML tags, web addresses, a recurring <em>MISSING ALT TEXT</em> left over from the website scrape, and sentences glued together (<em>“…seen.To do this…”</em>).</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>clean <span class="ot">&lt;-</span> <span class="cf">function</span>(x) {</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">stri_replace_all_regex</span>(x, <span class="st">"MISSING ALT TEXT|&lt;[^&gt;]+&gt;|https?://</span><span class="sc">\\</span><span class="st">S+"</span>, <span class="st">" "</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">stri_replace_all_regex</span>(x, <span class="st">"([a-z])</span><span class="sc">\\</span><span class="st">.([A-Z])"</span>, <span class="st">"$1. $2"</span>)    <span class="co"># "seen.To" -&gt; "seen. To"</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">squish</span>(x)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>startups[, text <span class="sc">:</span><span class="er">=</span> <span class="fu">paste</span>(<span class="fu">clean</span>(tagline), <span class="fu">substr</span>(<span class="fu">clean</span>(description), <span class="dv">1</span>, <span class="dv">1500</span>))]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="step-2-the-topic-model" class="level2">
+<h2 class="anchored" data-anchor-id="step-2-the-topic-model">Step 2: the topic model</h2>
+<p>We embed every description with a sentence transformer, and let BERTopic (via the <code>Rhobots</code> package) group start-ups that describe themselves alike.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Rhobots)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>encoder <span class="ot">&lt;-</span> <span class="fu">load_hf_bert</span>(<span class="st">"sentence-transformers/all-mpnet-base-v2"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>emb <span class="ot">&lt;-</span> <span class="fu">embed_texts</span>(encoder, startups<span class="sc">$</span>text, <span class="at">max_length =</span> <span class="dv">384</span>, <span class="at">device =</span> <span class="st">"mps"</span>)   <span class="co"># ~25 minutes for 81,285 texts</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># try several settings before choosing one</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>sweep <span class="ot">&lt;-</span> <span class="fu">sweep_topics</span>(<span class="fu">prep_terms</span>(startups<span class="sc">$</span>text), <span class="at">embeddings =</span> emb, <span class="at">n_neighbors =</span> <span class="fu">c</span>(<span class="dv">15</span>, <span class="dv">30</span>),</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>                      <span class="at">min_pts =</span> <span class="fu">c</span>(<span class="dv">50</span>, <span class="dv">100</span>, <span class="dv">200</span>), <span class="at">extra_stopwords =</span> su_words, <span class="at">seed =</span> <span class="dv">42</span>)</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">fit_bertopic</span>(<span class="at">docs =</span> <span class="fu">prep_terms</span>(startups<span class="sc">$</span>text), <span class="at">embeddings =</span> emb, <span class="at">stopwords =</span> sw,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>                    <span class="at">umap_n_neighbors =</span> <span class="dv">30</span>, <span class="at">hdbscan_min_pts =</span> <span class="dv">100</span>, <span class="at">seed =</span> <span class="dv">42</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>fit <span class="ot">&lt;-</span> <span class="fu">reduce_outliers</span>(fit)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>n_neighbors</th>
+<th>min_pts</th>
+<th>Topics</th>
+<th>Not in a topic at first</th>
+<th>Silhouette</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>15</td>
+<td>50</td>
+<td>179</td>
+<td>41%</td>
+<td>0.66</td>
+</tr>
+<tr class="even">
+<td>30</td>
+<td>50</td>
+<td>171</td>
+<td>42%</td>
+<td>0.68</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>100</td>
+<td>92</td>
+<td>38%</td>
+<td>0.61</td>
+</tr>
+<tr class="even">
+<td><strong>30</strong></td>
+<td><strong>100</strong></td>
+<td><strong>99</strong></td>
+<td><strong>44%</strong></td>
+<td><strong>0.70</strong></td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>200</td>
+<td>53</td>
+<td>36%</td>
+<td>0.56</td>
+</tr>
+<tr class="even">
+<td>30</td>
+<td>200</td>
+<td>59</td>
+<td>46%</td>
+<td>0.71</td>
+</tr>
+</tbody>
+</table>
+<p>We use 30/100: <strong>99 topics</strong>, narrow enough to show niches inside industries but few enough to read, with good separation. The start-ups that fit no topic at first are assigned to the nearest one.</p>
+<p><strong>The stopword list matters.</strong> Many Dealroom descriptions follow one template (<em>“X is a pioneering startup operating in the … sector, focusing on innovative solutions…”</em>). Without words such as <em>startup, platform, solution, innovative, operating, sector</em> in the stopword list, those words are at the top of every topic. City and country names are removed as well, so that topics group start-ups by what they do rather than by where they are.</p>
+<section id="labelling-the-topics-and-two-lessons-on-prompting" class="level3">
+<h3 class="anchored" data-anchor-id="labelling-the-topics-and-two-lessons-on-prompting">Labelling the topics, and two lessons on prompting</h3>
+<p>A local language model (qwen3 through Ollama) reads each topic’s top terms and its ten most typical start-ups and returns a label, plus a broad theme that we use only to colour the charts.</p>
+<p><strong>Lesson 1: one question per call.</strong> In the first run we asked for the label, the theme and a third judgement in one call. The labels were good, but 40 of the 99 topics got the theme <em>Security and defence</em>, including renewable energy, fashion and education. Asking for the theme in a <strong>separate</strong> call, with every theme described and a one-sentence reason asked for <strong>before</strong> the answer, gave sensible themes.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>schema <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">type =</span> <span class="st">"object"</span>, <span class="at">required =</span> <span class="fu">list</span>(<span class="st">"reason"</span>, <span class="st">"theme"</span>),</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">properties =</span> <span class="fu">list</span>(<span class="at">reason =</span> <span class="fu">list</span>(<span class="at">type =</span> <span class="st">"string"</span>),                     <span class="co"># first: reason before the answer</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">theme  =</span> <span class="fu">list</span>(<span class="at">type =</span> <span class="st">"string"</span>, <span class="at">enum =</span> <span class="fu">names</span>(themes))))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p><strong>Lesson 2: not every judgement can be delegated.</strong> We also asked the model what holds each topic together: a market, a technology, a business model, a customer group or a societal challenge. Even with a separate call and a reason first, the answers were inconsistent (crypto infrastructure as a <em>customer group</em>, fashion brands as a <em>societal challenge</em>). We dropped this variable and <strong>measured</strong> the same idea from the data instead (Step 3).</p>
+<p>Some labels were corrected by hand after reading the topics. One topic turned out to be a group of descriptions written in Dutch and Nordic languages: a language cluster, not a business. It is kept in the model but left out of the comparisons.</p>
+</section>
+</section>
+<section id="step-3-topics-and-industries-see-different-things" class="level2">
+<h2 class="anchored" data-anchor-id="step-3-topics-and-industries-see-different-things">Step 3: topics and industries see different things</h2>
+<p>Each start-up now has two labels: Dealroom’s industry and its topic. How much do they agree?</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># normalised mutual information between two groupings of the same start-ups (0 = unrelated, 1 = identical)</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>nmi <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  t <span class="ot">&lt;-</span> <span class="fu">table</span>(a, b) <span class="sc">/</span> <span class="fu">length</span>(a); pa <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(t); pb <span class="ot">&lt;-</span> <span class="fu">colSums</span>(t); nz <span class="ot">&lt;-</span> t <span class="sc">&gt;</span> <span class="dv">0</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  mi <span class="ot">&lt;-</span> <span class="fu">sum</span>(t[nz] <span class="sc">*</span> <span class="fu">log</span>(t[nz] <span class="sc">/</span> <span class="fu">outer</span>(pa, pb)[nz]))</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  h  <span class="ot">&lt;-</span> <span class="cf">function</span>(p) <span class="sc">-</span><span class="fu">sum</span>(p[p <span class="sc">&gt;</span> <span class="dv">0</span>] <span class="sc">*</span> <span class="fu">log</span>(p[p <span class="sc">&gt;</span> <span class="dv">0</span>]))</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  <span class="dv">2</span> <span class="sc">*</span> mi <span class="sc">/</span> (<span class="fu">h</span>(pa) <span class="sc">+</span> <span class="fu">h</span>(pb))</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">nmi</span>(startups<span class="sc">$</span>main_industry, startups<span class="sc">$</span>topic)          <span class="co"># 0.42</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">nmi</span>(startups<span class="sc">$</span>main_industry, <span class="fu">sample</span>(startups<span class="sc">$</span>topic))  <span class="co"># 0.005 when the topics are shuffled</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>The two overlap, but far from fully. In <strong>30% of the topics, no industry holds a majority</strong> of the start-ups.</p>
+<p><strong>One industry, many topics.</strong> To see how much an industry label lumps together, we count over how many topics its start-ups are spread. The <em>effective number</em> of topics is exp(entropy) of the shares: the number of equally large topics that would give the same spread.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dealroom industry</th>
+<th>Start-ups</th>
+<th>Effective number of topics</th>
+<th>Topics for 80% of start-ups</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>enterprise software</td>
+<td>8,696</td>
+<td>33.9</td>
+<td>27</td>
+</tr>
+<tr class="even">
+<td>health</td>
+<td>11,008</td>
+<td>21.9</td>
+<td>13</td>
+</tr>
+<tr class="odd">
+<td>fintech</td>
+<td>6,618</td>
+<td>20.4</td>
+<td>12</td>
+</tr>
+<tr class="even">
+<td>energy</td>
+<td>6,847</td>
+<td>20.3</td>
+<td>12</td>
+</tr>
+<tr class="odd">
+<td>food</td>
+<td>5,254</td>
+<td>11.5</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>fashion</td>
+<td>1,605</td>
+<td>5.2</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p><em>Health</em> covers digital health, diagnostics, medical devices, cancer immunotherapy, rare-disease drugs, biomaterials and digital mental health: different businesses, with different investors (Step 5).</p>
+<p><strong>One topic, many industries.</strong> The other way round: topics whose start-ups are spread over many industries. These are technologies and challenges that cut across markets, which an industry list scatters.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Start-ups</th>
+<th>Largest industry</th>
+<th>Effective number of industries</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>IoT solutions for businesses</td>
+<td>995</td>
+<td>enterprise software (21%)</td>
+<td>13.5</td>
+</tr>
+<tr class="even">
+<td>Industrial manufacturing</td>
+<td>2,039</td>
+<td>energy (18%)</td>
+<td>12.2</td>
+</tr>
+<tr class="odd">
+<td>Immersive XR (virtual and augmented reality)</td>
+<td>895</td>
+<td>media (24%)</td>
+<td>11.9</td>
+</tr>
+<tr class="even">
+<td>Geospatial AI for environmental management</td>
+<td>539</td>
+<td>enterprise software (22%)</td>
+<td>11.0</td>
+</tr>
+<tr class="odd">
+<td>Maritime data intelligence</td>
+<td>509</td>
+<td>transportation (27%)</td>
+<td>9.0</td>
+</tr>
+<tr class="even">
+<td>Carbon footprint solutions</td>
+<td>1,126</td>
+<td>energy (31%)</td>
+<td>8.7</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Topics without a name.</strong> Dealroom also has finer sub-industries. For carbon footprint tools, industrial AI, IoT, maritime data and geospatial AI, no sub-industry covers even a quarter of the start-ups. For quantum computing, the closest sub-industry is <em>data protection</em>.</p>
+</section>
+<section id="step-4-where-the-topics-are" class="level2">
+<h2 class="anchored" data-anchor-id="step-4-where-the-topics-are">Step 4: where the topics are</h2>
+<p>To map a topic we use the <strong>location quotient</strong> (LQ): the topic’s share among a region’s start-ups divided by its share in Europe. LQ = 2 means the topic is twice as common in that region as in Europe as a whole. Start-ups are placed in NUTS2 regions.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>region_topic <span class="ot">&lt;-</span> startups[<span class="sc">!</span><span class="fu">is.na</span>(nuts2), .N, by <span class="ot">=</span> .(<span class="at">region =</span> nuts2, topic)]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>region_topic[, n_region <span class="sc">:</span><span class="er">=</span> <span class="fu">sum</span>(N), by <span class="ot">=</span> region]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>p_topic <span class="ot">&lt;-</span> startups[, .(<span class="at">p =</span> .N <span class="sc">/</span> <span class="fu">nrow</span>(startups)), by <span class="ot">=</span> topic]</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>region_topic[p_topic, lq <span class="sc">:</span><span class="er">=</span> (N <span class="sc">/</span> n_region) <span class="sc">/</span> i.p, on <span class="ot">=</span> <span class="st">"topic"</span>]</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>region_topic[N <span class="sc">&gt;=</span> <span class="dv">15</span>][<span class="fu">order</span>(<span class="sc">-</span>lq)][, <span class="fu">head</span>(.SD, <span class="dv">3</span>), by <span class="ot">=</span> topic]       <span class="co"># hotspots per topic</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Industry maps are dominated by London, Paris and Berlin. The topics show the specialised hubs behind them:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Topic</th>
+<th>Hotspot (NUTS2)</th>
+<th>Start-ups</th>
+<th>LQ</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Sustainable aquaculture</td>
+<td>Western Norway (NO0A)</td>
+<td>41</td>
+<td>23.4</td>
+</tr>
+<tr class="even">
+<td>Offshore wind</td>
+<td>North Eastern Scotland (UKM5)</td>
+<td>22</td>
+<td>18.2</td>
+</tr>
+<tr class="odd">
+<td>Crypto infrastructure</td>
+<td>Central Switzerland, incl.&nbsp;Zug (CH06)</td>
+<td>117</td>
+<td>14.3</td>
+</tr>
+<tr class="even">
+<td>Cancer immunotherapy</td>
+<td>Northwestern Switzerland, incl.&nbsp;Basel (CH03)</td>
+<td>40</td>
+<td>11.5</td>
+</tr>
+<tr class="odd">
+<td>Satellites and aerospace</td>
+<td>Midi-Pyrénées, incl.&nbsp;Toulouse (FRJ2)</td>
+<td>15</td>
+<td>6.9</td>
+</tr>
+</tbody>
+</table>
+<p>At country level, the same measure is called <strong>revealed technological advantage</strong> (RTA). In the interactive analysis below you can pick a theme and see which countries specialise in which of its topics: Norway in offshore wind (RTA 5.4), Denmark in offshore wind and carbon-to-value, Finland in heat pumps and LED lighting.</p>
+</section>
+<section id="step-5-who-invests-where-per-topic" class="level2">
+<h2 class="anchored" data-anchor-id="step-5-who-invests-where-per-topic">Step 5: who invests where, per topic</h2>
+<p>An investment is one investor taking part in one funding round. Comparing the investor’s country with the start-up’s country gives its origin.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>inv <span class="ot">&lt;-</span> <span class="fu">merge</span>(investments, startups[, .(startup_id, topic, <span class="at">s_cc =</span> iso2)], <span class="at">by =</span> <span class="st">"startup_id"</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>inv[, origin <span class="sc">:</span><span class="er">=</span> <span class="fu">fcase</span>(<span class="fu">is.na</span>(i_cc), <span class="st">"unknown"</span>, i_cc <span class="sc">==</span> s_cc, <span class="st">"domestic"</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>                      i_cc <span class="sc">%in%</span> europe, <span class="st">"other Europe"</span>, i_cc <span class="sc">==</span> <span class="st">"US"</span>, <span class="st">"United States"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">default =</span> <span class="st">"rest of world"</span>)]</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>inv[origin <span class="sc">!=</span> <span class="st">"unknown"</span>, .N, by <span class="ot">=</span> .(topic, origin)][, share <span class="sc">:</span><span class="er">=</span> N <span class="sc">/</span> <span class="fu">sum</span>(N), by <span class="ot">=</span> topic]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>Overall, <strong>57%</strong> of investments are domestic, <strong>24%</strong> come from another European country, <strong>13%</strong> from the United States and 6% from the rest of the world. But this differs a lot by topic, and the industry average hides it:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th></th>
+<th>US share of investments</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fintech as a whole</td>
+<td>20%</td>
+</tr>
+<tr class="even">
+<td>… AI legal tech (within fintech)</td>
+<td>8%</td>
+</tr>
+<tr class="odd">
+<td>… crypto infrastructure (within fintech)</td>
+<td>31% (only 22% domestic)</td>
+</tr>
+<tr class="even">
+<td>Energy as a whole</td>
+<td>9%</td>
+</tr>
+<tr class="odd">
+<td>Semiconductors as a whole</td>
+<td>8%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Which country invests in which country.</strong> For each topic we count investments from every investor country into every start-up country: a matrix with domestic investment on the diagonal. The largest cross-border corridor is US investors into UK crypto start-ups (878 investments). In cancer immunotherapy, the five largest cross-border corridors all start in the United States (into the UK, Switzerland, Germany, France and Denmark).</p>
+<p><strong>What each country invests in abroad.</strong> Comparing each investor country’s cross-border investments with all cross-border investment (RTA again) gives each country a profile:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Investor country</th>
+<th>Most specialised cross-border topics (RTA)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Germany</td>
+<td>digital rehabilitation (4.7), medical devices (3.5), AI diagnostics (3.0)</td>
+</tr>
+<tr class="even">
+<td>Netherlands</td>
+<td>batteries (2.7), sustainable packaging (2.6), aquaculture (2.6)</td>
+</tr>
+<tr class="odd">
+<td>Sweden</td>
+<td>sustainable construction (3.5), heat pumps (2.3), logistics software (2.0)</td>
+</tr>
+<tr class="even">
+<td>Switzerland</td>
+<td>furniture and interior design (2.1), quantum computing (1.8), hospitality tech (1.7), digital insurance (1.7)</td>
+</tr>
+<tr class="odd">
+<td>United States</td>
+<td>consumer apps, music, sports, crypto (all about 1.4)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="the-answer" class="level2">
+<h2 class="anchored" data-anchor-id="the-answer">The answer</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>What do topics show that industries do not?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Topics and industries are different maps.</strong> They agree only moderately (NMI 0.42), and in 30% of the topics no industry has a majority. Large industries break up into many businesses: 13 topics for 80% of health start-ups, 27 for enterprise software.</li>
+<li><strong>Topics find groups that the classification has no name for</strong>: technologies such as IoT, XR, geospatial AI and industrial manufacturing are spread over 11 to 14 effective industries, and some topics have no matching sub-industry at all.</li>
+<li><strong>Topics reveal regional specialisations that industry maps hide</strong>: aquaculture in Western Norway, offshore wind in Aberdeen, crypto in Zug, immunotherapy in Basel, satellites in Toulouse.</li>
+<li><strong>Where the money comes from depends on the topic</strong>: within fintech the US share ranges from 8% to 31%; green, industrial and deep-tech topics are funded mostly at home.</li>
+<li><strong>Countries invest abroad in different topics</strong>: German investors in medical technology, Dutch in climate, Swedish in construction and heat pumps, Swiss in a mix that includes quantum computing and insurance.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="the-full-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="the-full-analysis">The full analysis</h2>
+<p>The topic space, the industry–topic comparison, maps for every topic, country specialisation, the origin of investments, the country-by-country matrix per topic and investor profiles. Use the menus to switch topics, themes and countries, and hover for details. <a href="DAFS_Showcase_startup_topics_standalone.html" target="_blank">Open the analysis in its own window</a>.</p>
+<iframe src="DAFS_Showcase_startup_topics_standalone.html" title="What start-ups do, where they are, and who funds them" loading="lazy" style="width: 100%; height: 900px; border: 1px solid #ddd; border-radius: 4px;"></iframe>
+</section>
+<section id="what-topics-as-a-datapoint-make-possible" class="level2">
+<h2 class="anchored" data-anchor-id="what-topics-as-a-datapoint-make-possible">What topics as a datapoint make possible</h2>
+<ol type="1">
+<li><strong>A second view of an existing classification.</strong> Comparing topics with industries shows where the classification lumps different businesses together and where it scatters one group of companies.</li>
+<li><strong>Groups without a name.</strong> A topic model has no list decided in advance, so it can find technologies and niches that the database’s categories do not have.</li>
+<li><strong>Geography at a finer grain.</strong> A topic per start-up can be counted per region, and finer categories show specialised hubs that broad industries hide.</li>
+<li><strong>Linking to networks.</strong> Joined to the investors, topics turn into flows: who funds what, from where.</li>
+</ol>
+</section>
+<section id="what-this-case-teaches" class="level2">
+<h2 class="anchored" data-anchor-id="what-this-case-teaches">What this case teaches</h2>
+<ol type="1">
+<li><strong>Clean and stop the template words.</strong> Database descriptions are written in a template; without a stopword list for it, every topic looks the same.</li>
+<li><strong>Try several settings.</strong> The number of topics is a choice (here between 53 and 179), not a result. Report which one you used and why.</li>
+<li><strong>Ask a language model one thing at a time, reason first.</strong> A combined question gave nonsense themes; separate questions fixed it.</li>
+<li><strong>Measure what you can, instead of asking for it.</strong> Whether a topic cuts across markets was better measured from the industry mix than judged by a language model.</li>
+<li><strong>Read the topics.</strong> One topic was a language, not a business. Only reading the top terms and typical start-ups shows such things.</li>
+</ol>
+</section>
+<section id="questions-for-discussion" class="level2">
+<h2 class="anchored" data-anchor-id="questions-for-discussion">Questions for discussion</h2>
+<ol type="1">
+<li>A start-up offering AI for insurance gets one topic: AI or insurance. Dealroom gives it both industries. What are the advantages of each approach, and how would soft topic shares (a probability for every topic) change the comparison?</li>
+<li>Descriptions are written to attract investors. Could the topic model be picking up fashions in how start-ups present themselves (everything is “AI-powered”) rather than what they do? How would you test this?</li>
+<li>Crypto start-ups get most of their money from abroad, green and deep-tech start-ups from home. Think of three explanations, and of data that would tell them apart.</li>
+<li>The location quotient is unstable for small regions. What minimum number of start-ups would you require, and how would you show the uncertainty on the map?</li>
+<li>Take one topic and the investor country matrix. Do investors fund start-ups in neighbouring countries, in countries with the same language, or in the large hubs? Which further data (distance, language, trade) could you join to test this?</li>
+</ol>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
