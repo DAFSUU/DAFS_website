@@ -275,8 +275,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#first-install-anaconda" id="toc-first-install-anaconda" class="nav-link active" data-scroll-target="#first-install-anaconda"><span class="header-section-number">1</span> First: install Anaconda</a></li>
-  <li><a href="#open-the-anaconda-command-window" id="toc-open-the-anaconda-command-window" class="nav-link" data-scroll-target="#open-the-anaconda-command-window"><span class="header-section-number">2</span> Open the Anaconda command window</a></li>
+  <li><a href="#first-install-anaconda-and-create-your-course-environment" id="toc-first-install-anaconda-and-create-your-course-environment" class="nav-link active" data-scroll-target="#first-install-anaconda-and-create-your-course-environment"><span class="header-section-number">1</span> First: install Anaconda and create your course environment</a></li>
+  <li><a href="#activate" id="toc-activate" class="nav-link" data-scroll-target="#activate"><span class="header-section-number">2</span> Open the Anaconda command window and activate <code>dafs</code></a></li>
   <li><a href="#install-the-app" id="toc-install-the-app" class="nav-link" data-scroll-target="#install-the-app"><span class="header-section-number">3</span> Install the app</a></li>
   <li><a href="#start-the-app" id="toc-start-the-app" class="nav-link" data-scroll-target="#start-the-app"><span class="header-section-number">4</span> Start the app</a></li>
   <li><a href="#stop-the-app" id="toc-stop-the-app" class="nav-link" data-scroll-target="#stop-the-app"><span class="header-section-number">5</span> Stop the app</a></li>
@@ -316,9 +316,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>The <strong>DAFS Teaching App</strong> is a small program that runs on your own laptop and opens in your web browser. It walks you through the course’s Python lessons: you read a short explanation, write some code, press <strong>Run</strong>, and get feedback straight away.</p>
-<section id="first-install-anaconda" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> First: install Anaconda</h1>
-<p>The app runs on Python, and in this course we get Python from <strong>Anaconda</strong>. If you haven’t installed Anaconda yet, do that first:</p>
+<section id="first-install-anaconda-and-create-your-course-environment" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> First: install Anaconda and create your course environment</h1>
+<p>The app runs on Python, and in this course we get Python from <strong>Anaconda</strong>, in a course environment called <strong><code>dafs</code></strong>. If you haven’t done so yet, do that first:</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -329,7 +329,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Follow that page up to and including <strong>Check that everything works</strong>, then come back here.</p>
+<p>Follow that page up to and including <strong>Create your course environment</strong> (all four steps), then come back here.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
@@ -342,25 +342,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>An earlier version of this page asked you to do that. You don’t need to uninstall it, but from now on <strong>only use the Anaconda Prompt (Windows) or Terminal with <code>(base)</code> (macOS)</strong>, and install the app again as described below. Then everything runs on Anaconda’s Python.</p>
+<p>An earlier version of this page asked you to do that. You don’t need to uninstall it, but from now on <strong>only use the Anaconda Prompt (Windows) or Terminal (macOS) with the <code>dafs</code> environment active</strong>, and install the app again as described below. Then everything runs in your course environment.</p>
 </div>
 </div>
 </section>
-<section id="open-the-anaconda-command-window" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Open the Anaconda command window</h1>
+<section id="activate" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Open the Anaconda command window and activate <code>dafs</code></h1>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">macOS</a></li></ul>
 <div class="tab-content" data-group="os">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Click <strong>Start</strong>, type <strong>Anaconda Prompt</strong>, and open it. The line should start with <strong><code>(base)</code></strong>.</p>
+<p>Click <strong>Start</strong>, type <strong>Anaconda Prompt</strong>, and open it. The line starts with <strong><code>(base)</code></strong>.</p>
 <p>Don’t use Command Prompt, PowerShell or Terminal: those don’t know about Anaconda.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Press <strong><code>Cmd</code> + <code>Space</code></strong>, type <strong>Terminal</strong>, and press <strong>Enter</strong>. The line should start with <strong><code>(base)</code></strong>.</p>
+<p>Press <strong><code>Cmd</code> + <code>Space</code></strong>, type <strong>Terminal</strong>, and press <strong>Enter</strong>. The line starts with <strong><code>(base)</code></strong>.</p>
 <p>No <code>(base)</code>? Quit Terminal completely (<code>Cmd + Q</code>) and open it again. See also the <a href="./install_python.html#troubleshooting">Anaconda troubleshooting</a>.</p>
 </div>
 </div>
 </div>
+<p>Now activate your course environment:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate dafs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The line now starts with <strong><code>(dafs)</code></strong>. Do this <strong>every time</strong> before you install, start or update the app.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -377,8 +380,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="install-the-app" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Install the app</h1>
-<p>Paste this command and press <strong>Enter</strong>. It’s the same on Windows and macOS:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install https://github.com/JPvdP/dafs-teach/archive/refs/heads/main.zip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>With <strong><code>(dafs)</code></strong> at the start of the line, paste this command and press <strong>Enter</strong>. It’s the same on Windows and macOS:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install https://github.com/JPvdP/dafs-teach/archive/refs/heads/main.zip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>This downloads the app and anything it still needs. You’ll see a lot of text scrolling past. That’s normal. It can take a few minutes.</p>
 <p>It’s done when the prompt comes back and one of the last lines says something like:</p>
 <pre><code>Successfully installed ... dafs-teach-0.1.0 ...</code></pre>
@@ -398,8 +401,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="start-the-app" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Start the app</h1>
-<p>In the Anaconda Prompt (Windows) or Terminal (macOS), paste this and press <strong>Enter</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> dafs_teach</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>In the Anaconda Prompt (Windows) or Terminal (macOS), with <strong><code>(dafs)</code></strong> at the start of the line, paste this and press <strong>Enter</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> dafs_teach</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>After a few seconds, your web browser opens a new tab with the app. If it doesn’t, look in the window for a line like <code>Local URL: http://localhost:8501</code>, and copy that address into your browser.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -442,13 +445,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="next-time-starting-the-app-again" class="level1" data-number="6">
 <h1 data-number="6"><span class="header-section-number">6</span> Next time: starting the app again</h1>
-<p>You don’t need to install anything again. Open the <strong>Anaconda Prompt</strong> (Windows) or <strong>Terminal</strong> (macOS) and run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> dafs_teach</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You don’t need to install anything again. Open the <strong>Anaconda Prompt</strong> (Windows) or <strong>Terminal</strong> (macOS) and run these two commands:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate dafs</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> dafs_teach</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="updating-the-app" class="level1" data-number="7">
 <h1 data-number="7"><span class="header-section-number">7</span> Updating the app</h1>
-<p>New lessons are added during the course. When we announce an update, first stop the app if it’s running, then run:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> https://github.com/JPvdP/dafs-teach/archive/refs/heads/main.zip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>New lessons are added during the course. When we announce an update, first stop the app if it’s running, then run (with <strong><code>(dafs)</code></strong> at the start of the line; if not, first run <code>conda activate dafs</code>):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--upgrade</span> https://github.com/JPvdP/dafs-teach/archive/refs/heads/main.zip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Then start the app again. Your progress is kept.</p>
 </section>
 <section id="troubleshooting" class="level1" data-number="8">
@@ -460,12 +464,15 @@ You’re in Command Prompt, PowerShell or Terminal. Close it and open <strong>An
 </dd>
 <dt><strong><code>No module named dafs_teach</code></strong></dt>
 <dd>
-The app isn’t installed in the Python you’re using. Make sure you’re in the Anaconda Prompt (Windows) or see <code>(base)</code> in Terminal (macOS), then run the install command from <a href="#install-the-app">Install the app</a> again.
+The app isn’t installed in the Python you’re using. Usually you forgot to activate the environment: run <code>conda activate dafs</code>, check that the line starts with <code>(dafs)</code>, and try again. If it still fails, run the install command from <a href="#install-the-app">Install the app</a> again (with <code>(dafs)</code> active).
+</dd>
+<dt><strong><code>EnvironmentNameNotFound: Could not find conda environment: dafs</code></strong></dt>
+<dd>
+You haven’t created the course environment yet. Follow <a href="./install_python.html#environment">Create your course environment</a> first.
 </dd>
 <dt><strong>A permission error during installation</strong> (<code>Access is denied</code>, <code>Permission denied</code>, or <code>Could not install packages due to an OSError</code>)</dt>
 <dd>
-Add <code>--user</code> to the install command:
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> pip install <span class="at">--user</span> https://github.com/JPvdP/dafs-teach/archive/refs/heads/main.zip</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+Check that the line starts with <code>(dafs)</code>: if it says <code>(base)</code>, run <code>conda activate dafs</code> and try again. Don’t add <code>--user</code> to the command: that installs the app <em>outside</em> your course environment.
 </dd>
 <dt><strong>The app opens on <code>localhost:8502</code> instead of <code>localhost:8501</code>, or says port 8501 is already in use</strong></dt>
 <dd>

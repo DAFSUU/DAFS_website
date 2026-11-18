@@ -275,19 +275,26 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul class="collapse">
-  <li><a href="#before-you-start-three-rules" id="toc-before-you-start-three-rules" class="nav-link active" data-scroll-target="#before-you-start-three-rules"><span class="header-section-number">1</span> Before you start: three rules</a></li>
+  <li><a href="#before-you-start-four-rules" id="toc-before-you-start-four-rules" class="nav-link active" data-scroll-target="#before-you-start-four-rules"><span class="header-section-number">1</span> Before you start: four rules</a></li>
   <li><a href="#download-anaconda" id="toc-download-anaconda" class="nav-link" data-scroll-target="#download-anaconda"><span class="header-section-number">2</span> Download Anaconda</a></li>
   <li><a href="#install-anaconda" id="toc-install-anaconda" class="nav-link" data-scroll-target="#install-anaconda"><span class="header-section-number">3</span> Install Anaconda</a></li>
   <li><a href="#prompt" id="toc-prompt" class="nav-link" data-scroll-target="#prompt"><span class="header-section-number">4</span> Open the Anaconda command window</a></li>
-  <li><a href="#check" id="toc-check" class="nav-link" data-scroll-target="#check"><span class="header-section-number">5</span> Check that everything works</a></li>
-  <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter"><span class="header-section-number">6</span> Start Jupyter Notebook</a>
+  <li><a href="#check" id="toc-check" class="nav-link" data-scroll-target="#check"><span class="header-section-number">5</span> Check that Anaconda works</a></li>
+  <li><a href="#environment" id="toc-environment" class="nav-link" data-scroll-target="#environment"><span class="header-section-number">6</span> Create your course environment</a>
   <ul class="collapse">
-  <li><a href="#make-a-folder-for-this-course" id="toc-make-a-folder-for-this-course" class="nav-link" data-scroll-target="#make-a-folder-for-this-course"><span class="header-section-number">6.1</span> Make a folder for this course</a></li>
-  <li><a href="#your-first-notebook" id="toc-your-first-notebook" class="nav-link" data-scroll-target="#your-first-notebook"><span class="header-section-number">6.2</span> Your first notebook</a></li>
+  <li><a href="#step-1-create-the-environment" id="toc-step-1-create-the-environment" class="nav-link" data-scroll-target="#step-1-create-the-environment"><span class="header-section-number">6.1</span> Step 1: Create the environment</a></li>
+  <li><a href="#step-2-activate-the-environment" id="toc-step-2-activate-the-environment" class="nav-link" data-scroll-target="#step-2-activate-the-environment"><span class="header-section-number">6.2</span> Step 2: Activate the environment</a></li>
+  <li><a href="#step-3-make-the-environment-visible-in-jupyter" id="toc-step-3-make-the-environment-visible-in-jupyter" class="nav-link" data-scroll-target="#step-3-make-the-environment-visible-in-jupyter"><span class="header-section-number">6.3</span> Step 3: Make the environment visible in Jupyter</a></li>
+  <li><a href="#step-4-check-the-environment" id="toc-step-4-check-the-environment" class="nav-link" data-scroll-target="#step-4-check-the-environment"><span class="header-section-number">6.4</span> Step 4: Check the environment</a></li>
   </ul></li>
-  <li><a href="#stopping-jupyter" id="toc-stopping-jupyter" class="nav-link" data-scroll-target="#stopping-jupyter"><span class="header-section-number">7</span> Stopping Jupyter</a></li>
-  <li><a href="#installing-extra-packages" id="toc-installing-extra-packages" class="nav-link" data-scroll-target="#installing-extra-packages"><span class="header-section-number">8</span> Installing extra packages</a></li>
-  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">9</span> Troubleshooting</a></li>
+  <li><a href="#jupyter" id="toc-jupyter" class="nav-link" data-scroll-target="#jupyter"><span class="header-section-number">7</span> Start Jupyter Notebook</a>
+  <ul class="collapse">
+  <li><a href="#make-a-folder-for-this-course" id="toc-make-a-folder-for-this-course" class="nav-link" data-scroll-target="#make-a-folder-for-this-course"><span class="header-section-number">7.1</span> Make a folder for this course</a></li>
+  <li><a href="#your-first-notebook" id="toc-your-first-notebook" class="nav-link" data-scroll-target="#your-first-notebook"><span class="header-section-number">7.2</span> Your first notebook</a></li>
+  </ul></li>
+  <li><a href="#stopping-jupyter" id="toc-stopping-jupyter" class="nav-link" data-scroll-target="#stopping-jupyter"><span class="header-section-number">8</span> Stopping Jupyter</a></li>
+  <li><a href="#installing-extra-packages" id="toc-installing-extra-packages" class="nav-link" data-scroll-target="#installing-extra-packages"><span class="header-section-number">9</span> Installing extra packages</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting"><span class="header-section-number">10</span> Troubleshooting</a></li>
   </ul>
 </nav>
     </div>
@@ -327,6 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>the packages we use in class (<strong>pandas</strong>, <strong>NumPy</strong>, <strong>matplotlib</strong>, …), already installed;</li>
 <li><strong>Anaconda Prompt</strong> (Windows) / the <strong>Terminal</strong> (macOS), a window to type the occasional command in.</li>
 </ul>
+<p>After installing Anaconda, you create a <strong>course environment</strong> called <code>dafs</code>: a separate, clean Python setup that you use for everything in this course.</p>
 <p>This page takes you through the installation step by step. Choose your operating system in the tabs below; the choice carries over to all other tabs on this page.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -341,9 +349,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Anaconda is a big download (about 1 GB) and takes 10–20 minutes to install. Use a stable internet connection, plug in your charger, and do this <strong>before</strong> the first lab session.</p>
 </div>
 </div>
-<section id="before-you-start-three-rules" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Before you start: three rules</h1>
-<p>These three rules prevent almost every installation problem we’ve seen in previous years.</p>
+<section id="before-you-start-four-rules" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Before you start: four rules</h1>
+<p>These four rules prevent almost every installation problem we’ve seen in previous years.</p>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -380,7 +388,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>If you already have Anaconda from another course, <strong>don’t install it a second time</strong>. Skip to <a href="#check">Check that everything works</a>. If that check fails, uninstall the old Anaconda first (see <a href="#troubleshooting">Troubleshooting</a>).</p>
+<p>If you already have Anaconda from another course, <strong>don’t install it a second time</strong>. Skip to <a href="#check">Check that Anaconda works</a>. If that check fails, uninstall the old Anaconda first (see <a href="#troubleshooting">Troubleshooting</a>).</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>4. Always work in the <code>dafs</code> environment
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>After installing, you create a course environment called <code>dafs</code> (see <a href="#environment">Create your course environment</a>). Activate it <strong>every time</strong> you start working, with <code>conda activate dafs</code>. You can tell it’s active when the line in the Anaconda Prompt / Terminal starts with <strong><code>(dafs)</code></strong>.</p>
 </div>
 </div>
 </section>
@@ -579,7 +600,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 <section id="check" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Check that everything works</h1>
+<h1 data-number="5"><span class="header-section-number">5</span> Check that Anaconda works</h1>
 <p>In the Anaconda Prompt (Windows) or Terminal (macOS), paste this and press <strong>Enter</strong>:</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import sys, pandas, numpy, matplotlib; print('Python', sys.version.split()[0]); print(sys.executable)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>You should see two lines like this:</p>
@@ -603,12 +624,96 @@ C:\Users\jdevries\anaconda3\python.exe</code></pre>
 </ul>
 <p>If you get an error instead, see <a href="#troubleshooting">Troubleshooting</a>.</p>
 </section>
-<section id="jupyter" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Start Jupyter Notebook</h1>
+<section id="environment" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Create your course environment</h1>
+<p>Anaconda comes with one big Python setup, called <strong><code>base</code></strong> (that’s the <code>(base)</code> you see in the Anaconda Prompt / Terminal). For this course you create your own, separate setup: an <strong>environment</strong> called <strong><code>dafs</code></strong>.</p>
+<p>Think of an environment as a separate toolbox for this course:</p>
+<ul>
+<li>Everyone in the course has <strong>the same Python version and the same packages</strong>, so code that works for the teacher works for you.</li>
+<li>Anything you install or change for this course <strong>can’t break</strong> other Python work on your laptop (for example for another course), and the other way around.</li>
+<li>If something does go wrong, you can <strong>throw the environment away and make a new one</strong> in five minutes, without reinstalling Anaconda.</li>
+</ul>
+<p>You do the steps below <strong>once</strong>.</p>
+<section id="step-1-create-the-environment" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="step-1-create-the-environment"><span class="header-section-number">6.1</span> Step 1: Create the environment</h2>
+<p>In the Anaconda Prompt (Windows) or Terminal (macOS), paste this command (it’s one long line; use the copy button) and press <strong>Enter</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-y</span> <span class="at">-n</span> dafs <span class="at">--override-channels</span> <span class="at">-c</span> conda-forge python=3.12 pandas numpy matplotlib openpyxl notebook ipykernel</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>This downloads Python 3.12 with the packages we use in the course, plus Jupyter Notebook. It takes <strong>3–10 minutes</strong>. It’s done when you see:</p>
+<pre><code># To activate this environment, use
+#
+#     $ conda activate dafs</code></pre>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>What does this command mean?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>conda create -n dafs</code>: create a new environment, named <code>dafs</code>.</li>
+<li><code>-y</code>: answer “yes” to the confirmation question.</li>
+<li><code>--override-channels -c conda-forge</code>: download everything from <strong>conda-forge</strong>, a free community collection of packages. This avoids licence questions from Anaconda’s own package collection.</li>
+<li><code>python=3.12 pandas numpy …</code>: what to put in the environment.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="step-2-activate-the-environment" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="step-2-activate-the-environment"><span class="header-section-number">6.2</span> Step 2: Activate the environment</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate dafs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>The start of the line changes from <strong><code>(base)</code></strong> to <strong><code>(dafs)</code></strong>. That means you’re now working in your course environment.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Important</span>Do this every time
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every time you open a new Anaconda Prompt / Terminal, it starts in <code>(base)</code>. Always type <code>conda activate dafs</code> first, before doing anything else for this course.</p>
+</div>
+</div>
+</section>
+<section id="step-3-make-the-environment-visible-in-jupyter" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="step-3-make-the-environment-visible-in-jupyter"><span class="header-section-number">6.3</span> Step 3: Make the environment visible in Jupyter</h2>
+<p>With <strong><code>(dafs)</code></strong> at the start of the line, paste this and press <strong>Enter</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-m</span> ipykernel install <span class="at">--user</span> <span class="at">--name</span> dafs <span class="at">--display-name</span> <span class="st">"Python (DAFS)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>It answers with <code>Installed kernelspec dafs in ...</code>. Now Jupyter always offers <strong>Python (DAFS)</strong> as an option, even if you open Jupyter some other way.</p>
+</section>
+<section id="step-4-check-the-environment" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="step-4-check-the-environment"><span class="header-section-number">6.4</span> Step 4: Check the environment</h2>
+<p>With <strong><code>(dafs)</code></strong> at the start of the line, paste this and press <strong>Enter</strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">-c</span> <span class="st">"import sys, pandas, numpy, matplotlib, openpyxl; print('Python', sys.version.split()[0]); print(sys.executable)"</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>You should see:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">macOS</a></li></ul>
+<div class="tab-content" data-group="os">
+<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<pre><code>Python 3.12.x
+C:\Users\jdevries\anaconda3\envs\dafs\python.exe</code></pre>
+</div>
+<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<pre><code>Python 3.12.x
+/opt/anaconda3/envs/dafs/bin/python</code></pre>
+</div>
+</div>
+</div>
+<p>The version starts with <strong>3.12</strong>, and the path contains <strong><code>envs</code></strong> and <strong><code>dafs</code></strong>. If so, your course environment is ready.</p>
+</section>
+</section>
+<section id="jupyter" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Start Jupyter Notebook</h1>
 <ol type="1">
 <li><p>Open the <strong>Anaconda Prompt</strong> (Windows) or <strong>Terminal</strong> (macOS), as in <a href="#prompt">Open the Anaconda command window</a>.</p></li>
-<li><p>Type this and press <strong>Enter</strong>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Activate your course environment. The line should then start with <strong><code>(dafs)</code></strong>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate dafs</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>Start Jupyter:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
 <li><p>After a few seconds, Jupyter opens in your web browser. It shows the files and folders in your home folder.</p></li>
 </ol>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -634,11 +739,11 @@ C:\Users\jdevries\anaconda3\python.exe</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You can also open <strong>Anaconda Navigator</strong> (Windows: from the Start menu; macOS: from your <strong>Applications</strong> folder), and click <strong>Launch</strong> under <strong>Jupyter Notebook</strong>. The result is the same. If Navigator is slow or doesn’t open, use the <code>jupyter notebook</code> command above. It’s the more reliable route.</p>
+<p>You can also open <strong>Anaconda Navigator</strong> (Windows: from the Start menu; macOS: from your <strong>Applications</strong> folder). At the top, switch the environment drop-down from <strong>base (root)</strong> to <strong>dafs</strong>, then click <strong>Launch</strong> under <strong>Jupyter Notebook</strong>. The result is the same. If Navigator is slow or doesn’t open, use the commands above. That’s the more reliable route.</p>
 </div>
 </div>
-<section id="make-a-folder-for-this-course" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="make-a-folder-for-this-course"><span class="header-section-number">6.1</span> Make a folder for this course</h2>
+<section id="make-a-folder-for-this-course" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="make-a-folder-for-this-course"><span class="header-section-number">7.1</span> Make a folder for this course</h2>
 <p>Keep all your course files in one place. In Jupyter’s file view:</p>
 <ol type="1">
 <li>Click <strong>New</strong> (top right) → <strong>New Folder</strong>.</li>
@@ -660,19 +765,22 @@ C:\Users\jdevries\anaconda3\python.exe</code></pre>
 </div>
 </div>
 </section>
-<section id="your-first-notebook" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="your-first-notebook"><span class="header-section-number">6.2</span> Your first notebook</h2>
+<section id="your-first-notebook" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="your-first-notebook"><span class="header-section-number">7.2</span> Your first notebook</h2>
 <ol type="1">
-<li><p>Inside the <code>DAFS</code> folder, click <strong>New</strong> → <strong>Notebook</strong>. If it asks for a kernel, choose <strong>Python 3</strong>.</p></li>
-<li><p>Click in the first cell, type the line below, and press <strong><code>Shift</code> + <code>Enter</code></strong> to run it:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, I'm ready for DAFS!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>If the text appears below the cell, <strong>your setup is complete!</strong></p></li>
+<li><p>Inside the <code>DAFS</code> folder, click <strong>New</strong> → <strong>Notebook</strong>. If it asks for a kernel, choose <strong>Python (DAFS)</strong>.</p></li>
+<li><p>Look at the top right of the notebook. It shows which <strong>kernel</strong> (which Python) the notebook uses. It should say <strong>Python (DAFS)</strong>. If it says something else, click it (or use <strong>Kernel → Change Kernel…</strong>) and choose <strong>Python (DAFS)</strong>.</p></li>
+<li><p>Click in the first cell, type the lines below, and press <strong><code>Shift</code> + <code>Enter</code></strong> to run them:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, I'm ready for DAFS!"</span>)</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sys.executable)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
+<li><p>If the greeting appears, and the path below it contains <strong><code>dafs</code></strong>, <strong>your setup is complete!</strong></p></li>
 <li><p>Save with <strong><code>Ctrl + S</code></strong> (macOS: <strong><code>Cmd + S</code></strong>). Rename the notebook by clicking its name (<code>Untitled</code>) at the top.</p></li>
 </ol>
 </section>
 </section>
-<section id="stopping-jupyter" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Stopping Jupyter</h1>
+<section id="stopping-jupyter" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Stopping Jupyter</h1>
 <p>When you’re done:</p>
 <ol type="1">
 <li>Save your notebook.</li>
@@ -681,10 +789,10 @@ C:\Users\jdevries\anaconda3\python.exe</code></pre>
 </ol>
 <p>If that doesn’t work, click inside the Anaconda Prompt / Terminal window and press <strong><code>Ctrl + C</code></strong> (also on a Mac: <code>Ctrl</code>, not <code>Cmd</code>). Press it twice if needed, or type <code>y</code> and <strong>Enter</strong> if it asks for confirmation.</p>
 </section>
-<section id="installing-extra-packages" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Installing extra packages</h1>
-<p>Anaconda already has almost everything we use. If you do need to install an extra package, do it <strong>inside your notebook</strong> with <code>%pip</code>:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install packagename</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<section id="installing-extra-packages" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Installing extra packages</h1>
+<p>Your <code>dafs</code> environment already has everything we use. If you do need to install an extra package, do it <strong>inside your notebook</strong> with <code>%pip</code>, in a notebook that uses the <strong>Python (DAFS)</strong> kernel:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install packagename</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>After installing, <strong>restart the kernel</strong>: <strong>Kernel</strong> → <strong>Restart Kernel</strong>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -696,16 +804,16 @@ C:\Users\jdevries\anaconda3\python.exe</code></pre>
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><code>%pip</code> always installs the package into the exact Python your notebook is using. <code>!pip</code> or <code>pip</code> in another window can install it into a <em>different</em> Python on your computer, after which the notebook still says <code>ModuleNotFoundError</code>. That’s the classic “I installed it but it doesn’t work” problem.</p>
+<p><code>%pip</code> always installs the package into the exact Python your notebook is using: with the <strong>Python (DAFS)</strong> kernel, that’s your course environment. <code>!pip</code> or <code>pip</code> in another window can install it into a <em>different</em> Python on your computer, after which the notebook still says <code>ModuleNotFoundError</code>. That’s the classic “I installed it but it doesn’t work” problem.</p>
 </div>
 </div>
 </section>
-<section id="troubleshooting" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Troubleshooting</h1>
+<section id="troubleshooting" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Troubleshooting</h1>
 <div class="tabset-margin-container"></div><div class="panel-tabset" data-group="os">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-5-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-1" role="tab" aria-controls="tabset-5-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-5-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-5-2" role="tab" aria-controls="tabset-5-2" aria-selected="false" href="">macOS</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-6-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-1" role="tab" aria-controls="tabset-6-1" aria-selected="true" href="">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-6-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-6-2" role="tab" aria-controls="tabset-6-2" aria-selected="false" href="">macOS</a></li></ul>
 <div class="tab-content" data-group="os">
-<div id="tabset-5-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-5-1-tab">
+<div id="tabset-6-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-6-1-tab">
 <dl>
 <dt><strong><code>'python' is not recognized…</code>, <code>'jupyter' is not recognized…</code>, or the Microsoft Store opens</strong></dt>
 <dd>
@@ -733,12 +841,12 @@ Uninstall Anaconda (Start → <strong>Settings</strong> → <strong>Apps</strong
 </dd>
 </dl>
 </div>
-<div id="tabset-5-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-5-2-tab">
+<div id="tabset-6-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-6-2-tab">
 <dl>
 <dt><strong>No <code>(base)</code> in Terminal, or <code>zsh: command not found: conda</code> / <code>jupyter</code></strong></dt>
 <dd>
 First quit Terminal completely (<code>Cmd + Q</code>) and open it again. If it still doesn’t work, paste this command, press <strong>Enter</strong>, then quit and reopen Terminal:
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/opt/anaconda3/bin/conda</span> init zsh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">/opt/anaconda3/bin/conda</span> init zsh</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </dd>
 <dt><strong>The check shows a path <em>without</em> <code>anaconda3</code></strong> (for example <code>/usr/bin/python3</code> or <code>/Library/Frameworks/...</code> or <code>/opt/homebrew/...</code>)</dt>
 <dd>
@@ -758,9 +866,29 @@ Click <strong>Cancel</strong>. You typed <code>python3</code> (or <code>git</cod
 </div>
 <p><strong>Both systems:</strong></p>
 <dl>
+<dt><strong><code>EnvironmentNameNotFound: Could not find conda environment: dafs</code></strong></dt>
+<dd>
+The environment wasn’t created (or creating it failed). Run the command from <a href="#step-1-create-the-environment">Step 1: Create the environment</a> again, and check that it ends with the <code>conda activate dafs</code> message.
+</dd>
+<dt><strong>An error about “Terms of Service have not been accepted” (<code>CondaToSNonInteractiveError</code>)</strong></dt>
+<dd>
+Part of the <code>conda create</code> command went missing. Copy the <strong>whole</strong> command with the copy button, including <code>--override-channels -c conda-forge</code>, and run it again.
+</dd>
+<dt><strong><code>CondaError: Run 'conda init' before 'conda activate'</code></strong></dt>
+<dd>
+Windows: you’re not in the <strong>Anaconda Prompt</strong>; open it from the Start menu. macOS: see “No <code>(base)</code> in Terminal” above.
+</dd>
 <dt><strong><code>ModuleNotFoundError: No module named ...</code> in a notebook</strong></dt>
 <dd>
-Install the package with <code>%pip install ...</code> <em>inside the notebook</em>, then <strong>Kernel</strong> → <strong>Restart Kernel</strong> (see <a href="#installing-extra-packages">Installing extra packages</a>).
+First check the kernel at the top right of the notebook: it should say <strong>Python (DAFS)</strong> (see <a href="#your-first-notebook">Your first notebook</a>). If it does and the package is still missing, install it with <code>%pip install ...</code> <em>inside the notebook</em>, then <strong>Kernel</strong> → <strong>Restart Kernel</strong> (see <a href="#installing-extra-packages">Installing extra packages</a>).
+</dd>
+<dt><strong>“Python (DAFS)” isn’t in the list of kernels</strong></dt>
+<dd>
+Do <a href="#step-3-make-the-environment-visible-in-jupyter">Step 3: Make the environment visible in Jupyter</a> (with <code>(dafs)</code> active), then reload the Jupyter page in your browser.
+</dd>
+<dt><strong>I want to start over with a fresh environment</strong></dt>
+<dd>
+Close Jupyter, then in the Anaconda Prompt / Terminal (in <code>(base)</code>) run <code>conda env remove -y -n dafs</code>, and do all the steps in <a href="#environment">Create your course environment</a> again. Your notebooks and data files are not affected: they’re in your <code>DAFS</code> folder, not in the environment.
 </dd>
 <dt><strong><code>FileNotFoundError</code> when reading a data file</strong></dt>
 <dd>
@@ -777,7 +905,7 @@ Anaconda sometimes redesigns its website. You can always download the installer 
 <dt><strong>My old Anaconda doesn’t work / I want to start over</strong></dt>
 <dd>
 Uninstall it first. <strong>Windows:</strong> Start → <strong>Settings</strong> → <strong>Apps</strong> → <strong>Anaconda3</strong> → <strong>Uninstall</strong>. <strong>macOS:</strong> in Terminal, run the command below and type your Mac password when asked (you won’t see it as you type, that’s normal). Then quit Terminal.
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> rm <span class="at">-rf</span> /opt/anaconda3 ~/anaconda3 ~/opt/anaconda3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> rm <span class="at">-rf</span> /opt/anaconda3 ~/anaconda3 ~/opt/anaconda3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 Then install Anaconda again following this guide. Not comfortable doing this? Bring your laptop to the lab session and we’ll do it together.
 </dd>
 <dt><strong>Still stuck?</strong></dt>

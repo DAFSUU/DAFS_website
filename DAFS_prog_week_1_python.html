@@ -343,7 +343,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <tr class="odd">
 <td>Install a package</td>
 <td><input type="checkbox"></td>
-<td>pip install pandas</td>
+<td>%pip install pandas</td>
 </tr>
 <tr class="even">
 <td>Load a package</td>
@@ -413,7 +413,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="column" style="width:100%;">
 <p><img src="Pythonlogo.png" class="img-fluid"></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>pip install pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install pandas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div>
@@ -455,13 +455,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In Jupyter, installing a package can be done as described above. However, the cell needs to be empty and only contain the pip command. If you want to add comments, or install multiple packages, use: !pip install pandas.</p>
-<p>The ! tells jupyter that you are running a system command not python code. You can then use</p>
+<p>In Jupyter, always install packages with <strong><code>%pip</code></strong> (with the <code>%</code> sign), in a notebook that uses the <strong>Python (DAFS)</strong> kernel. The <code>%</code> tells Jupyter to install the package into the exact Python your notebook is using, which is your <code>dafs</code> course environment. You can put several install lines, and comments, in one cell:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Installing packages</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install pandas</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">!</span>pip install numpy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install pandas</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">%</span>pip install numpy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
+<p>Don’t use <code>!pip</code> or plain <code>pip</code>: those can install the package into a <em>different</em> Python on your computer, after which your notebook still says <code>ModuleNotFoundError</code>. After installing, restart the kernel (<strong>Kernel → Restart Kernel</strong>) before you <code>import</code> the package.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
